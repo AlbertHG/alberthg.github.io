@@ -1,10 +1,10 @@
 # Site settings
-title: A_Tuk Blog
-SEOTitle: ATuk|Blog
-header-img: img/post-bg-desk.jpg
+title: ATuk Blog
+SEOTitle: ATuk's Blog
+header-img: img/myP.JPG.jpg
 email: hhhgggpps@gmail.com
 description: "Hello World"
-keyword: "A_Tuk Blog"
+keyword: "ATuk Blog"
 url: "https://alberthg.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/AlbertHG/alberthg.github.io.git" # you code repository
