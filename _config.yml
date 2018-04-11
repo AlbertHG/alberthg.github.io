@@ -1,18 +1,18 @@
 # Site settings
 title: A_Tuk Blog
-SEOTitle: 柏荧的博客 | A_Tuk Blog
+SEOTitle: From ATuk | A_Tuk Blog
 header-img: img/post-bg-desk.jpg
 email: hhhgggpps@gmail.com
 description: "Hello World"
 keyword: "A_Tuk Blog"
-url: "http://atuk.github.io"          # your host, for absolute URL
+url: "https://alberthg.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/AlbertHG/atuk.github.io.git" # you code repository
+github_repo: "https://github.com/AlbertHG/alberthg.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Hello Code!"
+sidebar-avatar: /img/404.bg.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 60766904dab560d85c4d                            #生成的clientID
+  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #生成的clientSecret
+  repo: alberthg.github.io    #仓库名称
+  owner: AlbertHG    #github用户名
+  admin: AlbertHG
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
