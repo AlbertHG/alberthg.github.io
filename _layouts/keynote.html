@@ -93,7 +93,7 @@ layout: default
                 <!-- Gitalk link  -->
                 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
                 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                <script src="https://rawgit.com/AlbertHG/59f43a12a54a623c903eb5f5829f5fe0/raw/baa64aada28cc36dc5e0d9bb8d6d773a84c721dd/md5.min.js"></script>
+                <script src="/js/md5.min.js"></script>
                 <div id="gitalk-container"></div>
                     <script type="text/javascript">
                     var gitalk = new Gitalk({
@@ -102,7 +102,7 @@ layout: default
                     repo: '{{site.gitalk.repo}}',
                     owner: '{{site.gitalk.owner}}',
                     admin: ['{{site.gitalk.admin}}'],
-                    id: md5(location.pathname),
+                    id: md5('{{site.gitalk.ID}}'),
                     });
                     gitalk.render('gitalk-container');
                 </script>
