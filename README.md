@@ -1,13 +1,6 @@
-# BY Blog
-
-> 下面是博客的搭建教程，这个教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 。
->
-> 更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
->
 ### [博客传送门](https://alberthg.github.io/)
 
-![]()
-
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/img/blog_home.jpg)
 
 ## 使用
 
@@ -70,9 +63,6 @@ tags:
 ```
 
 ### 侧边栏
-
-看右边:
-![]()
 
 在 `_config.yml`文件里面的`Sidebar settings`。
 
