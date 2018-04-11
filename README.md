@@ -1,4 +1,4 @@
-### [博客传送门](https://alberthg.github.io/)
+# [博客传送门](https://alberthg.github.io/)
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/img/blog_home.jpg)
 
