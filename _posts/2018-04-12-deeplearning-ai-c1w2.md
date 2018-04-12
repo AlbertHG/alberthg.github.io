@@ -1,20 +1,22 @@
 ---
 layout:     post
 title:      神经网络的基础
-subtitle:    "deeplearning.ai Class1 Week2"
+subtitle:    "\"deeplearning.ai-Class1-Week2\""
 date:       2018-04-12
 author:     ATuk
-header-img: img/neural_netwek.jpg
+header-img: img/deeplearning_c1_w2.jpg
 catalog: true
 tags:
     - deep learning
     - 笔记
     - deeplearning.ai
     - 网易云课堂
-    - 编程练习
+    - 编程作业
 ---
 
-## [项目传送门](#https://github.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai)
+## [GitHub项目传送门](https://github.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai)
+
+> 欢迎Star
 
 ## Logistic 回归
 
