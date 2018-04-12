@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Caffe Windows 配置记录
+title:      Caffe Windows 配置
 subtitle:    "\"Caffe for Windows10\""
 date:       2018-04-12
 author:     ATuk
@@ -9,7 +9,14 @@ catalog: true
 tags:
     - caffe
     - win10
+    - python3
+    - python
+    - matlab
     - windows
+    - cmake
+    - vs2015
+    - 教程
+    - 环境搭建
 ---
 
 ## 前言
@@ -147,7 +154,7 @@ tags:
 :: Default values
 if DEFINED APPVEYOR (
 
-    :: ----这里有很多代码，被我删掉了，因为用不到。
+    :: ----这里有很多代码，在这里忽略了，因为不需要改动。
 
 ) else (
     :: Change the settings here to match your setup
@@ -187,7 +194,7 @@ if DEFINED APPVEYOR (
 
 )
 
-::----又被我删掉一堆代码
+::----这里有很多代码，在这里忽略了，因为不需要改动。
 
 echo INFO: ============================================================
 echo INFO: Summary:
@@ -210,7 +217,7 @@ echo INFO: RUN_LINT                   = !RUN_LINT!
 echo INFO: RUN_INSTALL                = !RUN_INSTALL!
 echo INFO: ============================================================
 
-::----又被我删掉一堆代码
+::----这里有很多代码，在这里忽略了，因为不需要改动。
 
 :: ----Configure using cmake and using the caffe-builder dependencies，好好核对，下列代码
 :: Add -DCUDNN_ROOT=C:/Projects/caffe/cudnn-8.0-windows10-x64-v5.1/cuda ^
@@ -230,7 +237,7 @@ cmake -G"!CMAKE_GENERATOR!" ^
 	  -DCUDNN_ROOT=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\cuda ^
       "%~dp0\.."
 
-::----又被我删掉一堆代码
+::----这里有很多代码，在这里忽略了，因为不需要改动。
 
 popd
 @endlocal
