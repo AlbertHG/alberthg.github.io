@@ -87,7 +87,7 @@ layout: default
                 <!-- 引入Gitalk评论插件  -->
                 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
                 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                <script src="https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/js/md5.min.js"></script>
+                <script src="/js/md5.mim.js"></script>
 
                 <div id="gitalk-container"></div>
                 <script type="text/javascript">
@@ -98,7 +98,7 @@ layout: default
                     owner: '{{site.gitalk.owner}}',
                     admin: ['{{site.gitalk.admin}}'],
                     distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-                    id: window.location.pathname
+                    id: md5(window.location.pathname),
                     });
                     gitalk.render('gitalk-container');
                 </script>
