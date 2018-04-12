@@ -112,10 +112,10 @@ tags:
 
 ### Logistic回归中的正则化
 
-$$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2\_2$$
+$$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2_2$$
 
-* L2 正则化：$$\frac{\lambda}{2m}{||w||}^2\_2 = \frac{\lambda}{2m}\sum_{j=1}^{n\_x}w^2\_j = \frac{\lambda}{2m}w^Tw$$
-* L1 正则化：$$\frac{\lambda}{2m}{||w||}\_1 = \frac{\lambda}{2m}\sum_{j=1}^{n\_x}{|w\_j|}$$
+* L2 正则化：$$\frac{\lambda}{2m}{||w||}^2_2 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}w^2_j = \frac{\lambda}{2m}w^Tw$$
+* L1 正则化：$$\frac{\lambda}{2m}{||w||}_1 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}{|w_j|}$$
 
 其中，λ 为 **正则化因子** ，是需要调整的 **超参数** 。
 
