@@ -46,7 +46,7 @@ tags:
     git checkout windows
     ```
 
-2. cuda_8.0.61_win10.exe下载地址。[cuda_8.0.61_win10](#http://developer.download.nvidia.com/compute/cuda/8.0/secure/Prod2/local_installers/cuda_8.0.61_win10.exe?bTpbywXSHEK2JHjDU7Hu9OtYtQpYpB9QgRmNj7T42X75aAutlbYTaom16xfCy3Tj7pu0sKAmkMGbsq71yNVkOWy1og9rLDroL8vTQJCo__3AoQZQCkqyFF0tBPzsu1BNzsl30bBYbtw_w32wV0WlOV-ayW3NJLl9IS6pjbjysLrwsL8)
+2. cuda_8.0.61_win10.exe下载地址。[cuda_8.0.61_win10](http://developer.download.nvidia.com/compute/cuda/8.0/secure/Prod2/local_installers/cuda_8.0.61_win10.exe?bTpbywXSHEK2JHjDU7Hu9OtYtQpYpB9QgRmNj7T42X75aAutlbYTaom16xfCy3Tj7pu0sKAmkMGbsq71yNVkOWy1og9rLDroL8vTQJCo__3AoQZQCkqyFF0tBPzsu1BNzsl30bBYbtw_w32wV0WlOV-ayW3NJLl9IS6pjbjysLrwsL8)
 
     安装完成后，在系统环境变量会有如下环境变量:
     ```
