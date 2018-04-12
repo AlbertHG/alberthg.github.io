@@ -37,7 +37,7 @@ tags:
 
 ## 资源地址
 
-1. 伯克利BVLC(Berkeley Vision And Learning Center) 版。 [https://github.com/BVLC/caffe](#https://github.com/BVLC/caffe)
+1. 伯克利BVLC(Berkeley Vision And Learning Center) 版。 [https://github.com/BVLC/caffe](https://github.com/BVLC/caffe)
     下载源码,在这里我使用`D:\GitHub Repository`用作根文件夹：
     ```
     git clone https://github.com/BVLC/caffe.git
@@ -143,7 +143,7 @@ tags:
 
 ## 官方使用`build\_win.cmd`编译Caffe
 
-[传送门](#https://github.com/BVLC/caffe/tree/windows)
+[传送门](https://github.com/BVLC/caffe/tree/windows)
 
 因为我们没有定义APPVEYOR，所以直接拉到else（大约69行）以后,修改：
 
