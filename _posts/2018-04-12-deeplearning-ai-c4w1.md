@@ -199,9 +199,9 @@ $$A^{[l]} = g^{[l]}(Z^{[l]})$$
 
 * **输出维度**：$n^{[l]}\_H \times n^{[l]}\_W \times n^{[l]}\_c$ 。其中
 
-$$n^{[l]}\_H = \biggl\lfloor \frac{n^{[l-1]}\_H+2p^{[l]}-f^{[l]}}{s^{[l]}}+1   \biggr\rfloor$$
+$$n^{[l]}_H = \biggl\lfloor \frac{n^{[l-1]}_H+2p^{[l]}-f^{[l]}}{s^{[l]}}+1   \biggr\rfloor$$
 
-$$n^{[l]}\_W = \biggl\lfloor \frac{n^{[l-1]}\_W+2p^{[l]}-f^{[l]}}{s^{[l]}}+1   \biggr\rfloor$$
+$$n^{[l]}_W = \biggl\lfloor \frac{n^{[l-1]}_W+2p^{[l]}-f^{[l]}}{s^{[l]}}+1   \biggr\rfloor$$
 
 * $n^{[l]}\_c$：**过滤器的数量（该层总共有几个特征检测器）**
 * **每个过滤器的维度**：$f^{[l]} \times f^{[l]} \times n^{[l-1]}\_c$ 。其中$n^{[l-1]}\_c$ 为输入图片通道数（也称深度）。
@@ -252,11 +252,11 @@ $$n^{[l]}\_W = \biggl\lfloor \frac{n^{[l-1]}\_W+2p^{[l]}-f^{[l]}}{s^{[l]}}+1   \
 
 池化过程的输入维度为：
 
-$$n\_H \times n\_W \times n\_c$$
+$$n_H \times n_W \times n_c$$
 
 输出维度为：
 
-$$\biggl\lfloor \frac{n\_H-f}{s}+1   \biggr\rfloor \times \biggl\lfloor \frac{n\_W-f}{s}+1   \biggr\rfloor \times n\_c$$
+$$\biggl\lfloor \frac{n_H-f}{s}+1   \biggr\rfloor \times \biggl\lfloor \frac{n_W-f}{s}+1   \biggr\rfloor \times n_c$$
 
 ### 卷积神经网络示例
 

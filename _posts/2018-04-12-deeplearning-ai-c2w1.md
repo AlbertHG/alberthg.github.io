@@ -114,8 +114,13 @@ tags:
 
 $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2_2$$
 
-* L2 正则化：$$\frac{\lambda}{2m}{||w||}^2_2 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}w^2_j = \frac{\lambda}{2m}w^Tw$$
-* L1 正则化：$$\frac{\lambda}{2m}{||w||}_1 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}{|w_j|}$$
+* L2 正则化：
+
+$$\frac{\lambda}{2m}{||w||}^2_2 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}w^2_j = \frac{\lambda}{2m}w^Tw$$
+
+* L1 正则化：
+
+$$\frac{\lambda}{2m}{||w||}_1 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}{|w_j|}$$
 
 其中，λ 为 **正则化因子** ，是需要调整的 **超参数** 。
 
@@ -127,11 +132,11 @@ $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||
 
 对于神经网络，加入正则化的成本函数：
 
-$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum_{l=1}^L{{||w^{[l]}||}}^2_F$$
+$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum_{l=1}^L{ {||w^{[l]}||}}^2_F$$
 
 因为 w 的大小为 ($n^{[l−1]}$, $n^{[l]}$)，因此
 
-$${{||w^{[l]}||}}^2_F = \sum^{n^{[l-1]}}_{i=1}\sum^{n^{[l]}}_{j=1}(w^{[l]}_{ij})^2$$
+$${ {||w^{[l]}||}}^2_F = \sum^{n^{[l-1]}}_{i=1}\sum^{n^{[l]}}_{j=1}(w^{[l]}_{ij})^2$$
 
 该矩阵范数被称为 **弗罗贝尼乌斯范数（Frobenius Norm）** ，所以神经网络中的正则化项被称为弗罗贝尼乌斯范数矩阵。
 
@@ -245,7 +250,7 @@ $$x = \frac{x - \mu}{\sigma^2}$$
 其中：
 
 $$\mu = \frac{1}{m}\sum_{i=1}^{m}x^{(i)}$$
-$$\sigma = \sqrt{\frac{1}{m}\sum_{i=1}^{m}x^{{(i)}^2}}$$
+$$\sigma = \sqrt{\frac{1}{m}\sum_{i=1}^{m}x^{ {(i)}^2}}$$
 
 以二维平面为例，下图展示了其归一化过程：
 
@@ -278,7 +283,7 @@ $$\hat{Y} = W^{[L]}W^{[L-1]}...W^{[2]}W^{[1]}X$$
 
 根据
 
-$$z={w}\_1{x}\_1+{w}\_2{x}\_2 + ... + {w}\_n{x}\_n + b$$
+$$z={w}_1{x}_1+{w}_2{x}_2 + ... + {w}_n{x}_n + b$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/13.jpg)
 
@@ -338,7 +343,7 @@ $$\approx{d\theta_{[i]}} = \frac{\partial J}{\partial \theta_i}$$
 
 因此，我们用梯度检验值
 
-$$\frac{{||d\theta_{approx} - d\theta||}_2}{{||d\theta_{approx}||}_2+{||d\theta||}_2}$$
+$$\frac{ {||d\theta_{approx} - d\theta||}_2}{ {||d\theta_{approx}||}_2+{||d\theta||}_2}$$
 
 检验反向传播的实施是否正确。其中，
 

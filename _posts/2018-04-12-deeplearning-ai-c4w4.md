@@ -121,7 +121,7 @@ Triplet 损失函数的定义基于三张图片：Anchor、Positive、Negative�
 
 $$L(A,P,N) = \max (||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} + \alpha, \ 0)$$
 
-这个max函数的作用就是，只要这个$||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} + \alpha ⩽ 0$，那么损失函数就是0。只要你能使画绿色下划线部分小于等于0，只要你能达到这个目标，那么这个例子的损失就是0。
+这个max函数的作用就是，只要这个$ ||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} + \alpha ⩽ 0 $，那么损失函数就是0。只要你能使画绿色下划线部分小于等于0，只要你能达到这个目标，那么这个例子的损失就是0。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week4/md_images/04.png)
 
@@ -285,7 +285,7 @@ $$G_{kk'}^{[l] (G)} = \sum\limits_{i=1}^{n_{h}^{[l]}}\sum\limits_{j=1}^{n_{w}^{[
 
 因此定义风格矩阵的代价函数：
 
-$$J_{style}^{[l]}(S, G) = \dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}||G^{[l] (S)} - G^{[l] (G)} ||\_{F}^{2} = \dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}\sum_{k}\sum_{k'}(G_{kk'}^{[l] (S)} - G_{kk'}^{[l] (G)})^{2}$$
+$$J_{style}^{[l]}(S, G) = \dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}||G^{[l] (S)} - G^{[l] (G)} ||_ {F}^{2} = \dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}\sum_{k}\sum_{k'}(G_{kk'}^{[l] (S)} - G_{kk'}^{[l] (G)})^{2}$$
 
 这将得到这两个矩阵之间的误差，因为它们是矩阵，所以在这里加一个F（Frobenius范数），这实际上是计算两个矩阵对应元素相减的平方的和，我们把这个式子展开，从$k$和$k'$开始作它们的差，把对应的式子写下来，然后把得到的结果都加起来，然后乘以一个归一化常数$\dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}$，再在外面加一个平方。*但是一般情况下你不用写这么多，一般我们只要将它乘以一个超参数$β$就行* 。
 
