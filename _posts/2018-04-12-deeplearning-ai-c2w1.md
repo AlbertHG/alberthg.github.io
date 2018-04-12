@@ -127,11 +127,11 @@ $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||
 
 对于神经网络，加入正则化的成本函数：
 
-$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum\_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum\_{l=1}^L{{||w^{[l]}||}}^2_F$$
+$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum_{l=1}^L{{||w^{[l]}||}}^2_F$$
 
 因为 w 的大小为 ($n^{[l−1]}$, $n^{[l]}$)，因此
 
-$${{||w^{[l]}||}}^2_F=\sum^{n^{[l-1]}}\_{i=1}\sum^{n^{[l]}}\_{j=1}(w^{[l]}\_{ij})^2$$
+$${{||w^{[l]}||}}^2_F = \sum^{n^{[l-1]}}_{i=1}\sum^{n^{[l]}}_{j=1}(w^{[l]}_{ij})^2$$
 
 该矩阵范数被称为 **弗罗贝尼乌斯范数（Frobenius Norm）** ，所以神经网络中的正则化项被称为弗罗贝尼乌斯范数矩阵。
 
@@ -334,15 +334,15 @@ $$d\theta_{approx}[i] ＝ \frac{J(\theta\_1, \theta\_2, ..., \theta\_i+\varepsil
 
 应该
 
-$$\approx{d\theta[i]} = \frac{\partial J}{\partial \theta_i}$$
+$$\approx{d\theta_{[i]}} = \frac{\partial J}{\partial \theta_i}$$
 
 因此，我们用梯度检验值
 
-$$\frac{{||d\theta\_{approx} - d\theta||}\_2}{{||d\theta\_{approx}||}\_2+{||d\theta||}\_2}$$
+$$\frac{{||d\theta_{approx} - d\theta||}_2}{{||d\theta_{approx}||}_2+{||d\theta||}_2}$$
 
 检验反向传播的实施是否正确。其中，
 
-$${||x||}\_2 = \sum^N\_{i=1}{|x_i|}^2$$
+$${||x||}_2 = \sum^N_{i=1}{|x_i|}^2$$
 
 表示向量 $x$ 的 L2-范数（也称“欧几里德范数”），它是误差平方之和，然后求平方根，得到的欧氏距离。
 
