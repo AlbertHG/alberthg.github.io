@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      神经网络的基础
-subtitle:    "deeplearning.ai"
+subtitle:    "deeplearning.ai Class1 Week2"
 date:       2018-04-12
 author:     ATuk
 header-img: img/neural_netwek.jpg
