@@ -16,6 +16,7 @@
 * 评论与 Google/Baidu Analytics
 	* [评论](#comment)
 	* [网站分析](#analytics)
+	* [Laxte支持](#Laxte支持)
 * 高级部分
 	* [自定义](#customization)
 	* [标题底图](#header-image)
@@ -163,6 +164,23 @@ iframe在不同的设备中，将会自动的调整大小。保留内边距是�
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
 ga_domain: auto			# 默认的是 auto
+```
+
+### Laxte支持
+
+在`_include/head.html`文件下添加：
+
+```html
+<!-- 直接入MathJax，使用Tex-MML-AM_HTLMorMML配置文件 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+									tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+													});
+</script>
+
+<script type="text/javascript"
+	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 ```
 
 ### Customization
