@@ -48,24 +48,24 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #�Ƿ�����Gitalk����
-  clientID: 60766904dab560d85c4d                            #���ɵ�clientID
-  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #���ɵ�clientSecret
-  repo: alberthg.github.io    #�ֿ�����
-  owner: AlbertHG    #github�û���
+  enable: true    #是否开启Gitalk评论
+  clientID: 60766904dab560d85c4d                            #生成的clientID
+  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #生成的clientSecret
+  repo: alberthg.github.io    #仓库名称
+  owner: AlbertHG    #github用户名
   admin: AlbertHG
-  distractionFreeMode: true #�Ƿ���������FB����Ӱ����
+  distractionFreeMode: true ##是否启用类似FB的阴影遮罩
 
 
-# ͳ��
+# 统计
 
 # Google Analytics
 ga_track_id: 'UA-117352143-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # Ĭ�ϵ��� auto
+ga_domain: auto               #  默认的是 auto
 
 # Featured Tags
-featured-tags: true                     # �Ƿ�ʹ����ҳ��ǩ
-featured-condition-size: 1              # ��ͬ��ǩ�����������������Ż���������ҳ
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
