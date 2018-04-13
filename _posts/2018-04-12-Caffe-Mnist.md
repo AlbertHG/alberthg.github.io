@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      Caffe Mnist 例程
-subtitle:    "\"Caffe for Windows10\""
+title:      Caffe Mnist 实例
+subtitle:    "\"【Caffe-windows】 Minst实例过程记录\""
 date:       2018-04-13
 author:     ATuk
-header-img: img/caffe.jpg
+header-img: img/caffe_mnist.jpg
 catalog: true
 tags:
     - caffe
@@ -78,7 +78,7 @@ pause
 
 第一个 `lenet_solver.prototxt` 这个文件是具体的训练网络的引入文件，定义了CNN网络架构之外的一些基础参数，如总的迭代次数、测试间隔、基础学习率、基础学习率的更新策略、训练平台（GPU或CPU）等。
 
-``` cpp
+```protobuf
 //对训练和测试网络的定义，网络的路径，可以使用绝对路径或者相对路径
 net: "examples/mnist/lenet_train_test.prototxt"
 
@@ -160,7 +160,7 @@ Caffe框架下的`lenet.prototxt`定义了一个广义上的LeNet模型，对MNI
 
 重点关注“训练数据”的路径`examples/mnist/mnist_train_lmdb`和“测试数据”路径`examples/mnist/mnist_test_lmdb`:
 
-```cpp
+```protobuf
 name: "LeNet"      //神经网络的名称是LeNet
 layer {                   //定义一个网络层
   name: "mnist"    //网络层的名称是mnist
@@ -361,7 +361,7 @@ pause
 
 顺带一提：
 
-只要是用caffe train -solver=xxxxxxx，那就是从头开始训练。
-凡是遇到caffe train -solver=xxxx  -weights=xxxxxx.caffemodel(.h5)，那就是用已有模型参数(权重偏置)去初始化网络，称为finetune。
+只要是用`caffe train -solver=xxxxxxx`，那就是从头开始训练。
+凡是遇到`caffe train -solver=xxxx  -weights=xxxxxx.caffemodel`，那就是用已有模型参数(权重偏置)去初始化网络，称为finetune。
 
 > 结束！！
