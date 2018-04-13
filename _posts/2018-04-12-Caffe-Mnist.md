@@ -2,7 +2,7 @@
 layout:     post
 title:      Caffe Mnist 例程
 subtitle:    "\"Caffe for Windows10\""
-date:       2018-04-12
+date:       2018-04-13
 author:     ATuk
 header-img: img/caffe.jpg
 catalog: true
