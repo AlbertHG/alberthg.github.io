@@ -171,16 +171,25 @@ ga_domain: auto			# 默认的是 auto
 在`_include/head.html`文件下添加：
 
 ```html
-<!-- 直接入MathJax，使用Tex-MML-AM_HTLMorMML配置文件 -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-									tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-													});
-</script>
-
-<script type="text/javascript"
-	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<!-- 直接引入MathJax，使用Tex-MML-AM_HTLMorMML配置文件 
+    1. 整行公式自动编号；
+    2. 将两个单美元符号$中间的内容看作行内数学公式（若文本内容中美元符号出现频率较高，建议禁用这一脚本）
+    3. 从mathjax官网挂载脚本。
+    -->
+    
+    <script type="text/x-mathjax-config"> 
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); 
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {
+             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+             processEscapes: true
+           }
+         });
+    </script>
+    
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
 ```
 
 ### Customization
