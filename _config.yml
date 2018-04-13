@@ -1,6 +1,6 @@
 # Site settings
 title: ATuk Blog
-SEOTitle: é»„é’¢çš„åšå®¢|ATuk Blog
+SEOTitle: »Æ¸ÖµÄ²©¿Í|ATuk Blog
 header-img: img/tag-bg-o.jpg
 email: hhhgggpps@gmail.com
 description: "Hello World"
@@ -11,7 +11,7 @@ github_repo: "https://github.com/AlbertHG/alberthg.github.io.git" # you code rep
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Hello Code!"
+sidebar-about-description: "From JINAN UNIVERSITY"
 sidebar-avatar: /img/myP.JPG     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -47,24 +47,24 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #æ˜¯å¦å¼€å¯Gitalkè¯„è®º
-  clientID: 60766904dab560d85c4d                            #ç”Ÿæˆçš„clientID
-  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #ç”Ÿæˆçš„clientSecret
-  repo: alberthg.github.io    #ä»“åº“åç§°
-  owner: AlbertHG    #githubç”¨æˆ·å
+  enable: true    #ÊÇ·ñ¿ªÆôGitalkÆÀÂÛ
+  clientID: 60766904dab560d85c4d                            #Éú³ÉµÄclientID
+  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #Éú³ÉµÄclientSecret
+  repo: alberthg.github.io    #²Ö¿âÃû³Æ
+  owner: AlbertHG    #githubÓÃ»§Ãû
   admin: AlbertHG
-  distractionFreeMode: true #æ˜¯å¦å¯ç”¨ç±»ä¼¼FBçš„é˜´å½±é®ç½©
+  distractionFreeMode: true #ÊÇ·ñÆôÓÃÀàËÆFBµÄÒõÓ°ÕÚÕÖ
 
 
-# ç»Ÿè®¡
+# Í³¼Æ
 
 # Google Analytics
 ga_track_id: 'UA-117352143-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # é»˜è®¤çš„æ˜¯ auto
+ga_domain: auto               # Ä¬ÈÏµÄÊÇ auto
 
 # Featured Tags
-featured-tags: true                     # æ˜¯å¦ä½¿ç”¨é¦–é¡µæ ‡ç­¾
-featured-condition-size: 1              # ç›¸åŒæ ‡ç­¾æ•°é‡å¤§äºè¿™ä¸ªæ•°ï¼Œæ‰ä¼šå‡ºç°åœ¨é¦–é¡µ
+featured-tags: true                     # ÊÇ·ñÊ¹ÓÃÊ×Ò³±êÇ©
+featured-condition-size: 1              # ÏàÍ¬±êÇ©ÊıÁ¿´óÓÚÕâ¸öÊı£¬²Å»á³öÏÖÔÚÊ×Ò³
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
