@@ -1,6 +1,6 @@
 # Site settings
 title: ATuk Blog
-SEOTitle: »Æ¸ÖµÄ²©¿Í|ATuk Blog
+SEOTitle: é»„é’¢çš„åšå®¢|ATuk Blog
 header-img: img/tag-bg-o.jpg
 email: hhhgggpps@gmail.com
 description: "Hello World"
@@ -48,24 +48,24 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #ÊÇ·ñ¿ªÆôGitalkÆÀÂÛ
-  clientID: 60766904dab560d85c4d                            #Éú³ÉµÄclientID
-  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #Éú³ÉµÄclientSecret
-  repo: alberthg.github.io    #²Ö¿âÃû³Æ
-  owner: AlbertHG    #githubÓÃ»§Ãû
+  enable: true    #ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Gitalkï¿½ï¿½ï¿½ï¿½
+  clientID: 60766904dab560d85c4d                            #ï¿½ï¿½ï¿½Éµï¿½clientID
+  clientSecret: 023a62f9067c73d7a1bc3993307063633dba3e6b   #ï¿½ï¿½ï¿½Éµï¿½clientSecret
+  repo: alberthg.github.io    #ï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½
+  owner: AlbertHG    #githubï¿½Ã»ï¿½ï¿½ï¿½
   admin: AlbertHG
-  distractionFreeMode: true #ÊÇ·ñÆôÓÃÀàËÆFBµÄÒõÓ°ÕÚÕÖ
+  distractionFreeMode: true #ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½FBï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½
 
 
-# Í³¼Æ
+# Í³ï¿½ï¿½
 
 # Google Analytics
 ga_track_id: 'UA-117352143-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # Ä¬ÈÏµÄÊÇ auto
+ga_domain: auto               # Ä¬ï¿½Ïµï¿½ï¿½ï¿½ auto
 
 # Featured Tags
-featured-tags: true                     # ÊÇ·ñÊ¹ÓÃÊ×Ò³±êÇ©
-featured-condition-size: 1              # ÏàÍ¬±êÇ©ÊıÁ¿´óÓÚÕâ¸öÊı£¬²Å»á³öÏÖÔÚÊ×Ò³
+featured-tags: true                     # ï¿½Ç·ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ç©
+featured-condition-size: 1              # ï¿½ï¿½Í¬ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
