@@ -1,4 +1,4 @@
-# [博客传送门](https://alberthg.github.io/)
+## [博客传送门](https://alberthg.github.io/)
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/img/blog_home.jpg)
 
@@ -13,11 +13,10 @@
 	* [推荐标签](#featured-tags)
 	* [好友链接](#friends)
 	* [HTML5 演示文档布局](#keynote-layout)
-* 评论与 Google/Baidu Analytics
 	* [评论](#comment)
 	* [网站分析](#analytics)
 	* [Laxte支持](#Laxte支持)
-* 高级部分
+* 其他
 	* [自定义](#customization)
 	* [标题底图](#header-image)
 	* [搜索展示标题-头文件](#seo-title)
@@ -204,8 +203,6 @@ ga_domain: auto			# 默认的是 auto
 
 标题底图的选取完全是看个人的审美了。每一篇文章可以有不同的底图，你想放什么就放什么，重点是宽度要够。
 
-> 上传的图片最好先压缩，这里推荐 imageOptim 图片压缩软件。
-
 但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
 
 ### SEO Title
@@ -217,7 +214,7 @@ ga_domain: auto			# 默认的是 auto
 
 ## 致谢
 
-1. 这个模板是从这里 [qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io) fork 的, 感谢这位道友。
+1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这位道友。
 2. 感谢 Jekyll、Github Pages 和 Bootstrap!
 
 ## License
