@@ -100,7 +100,7 @@ test_interval: 500
 2. momentum：冲量单元是梯度下降法中一种常用的加速技术，作用是有助于训练过程中逃离局部
     最小值，使网络能够更快速的收敛，具体的值是经过反复的迭代调试获得的经验值
 3. weight_decay：权值衰减的设置是为了防止训练出现过拟合，在损失函数中，weight_decay是放
-    在正则项（regularization）前面的一个系数，正则项一般指示模型的复杂度。weight_decay可以调节 
+    在正则项（regularization）前面的一个系数，正则项一般指示模型的复杂度。weight_decay可以调节
     模型复杂度对损失函数的影响，提高模型的泛化能力
 */
 # The base learning rate, momentum and the weight decay of the network.
@@ -335,29 +335,25 @@ layer {                                    //定义一个网络层
 
 ## 开始训练 Mnist
 
-来到 Caffe 的根目录 `D:\GitHub Repository\caffe` 新建文件
-
-`run-test-mnist.txt` :
-
-```
-build\x64\install\bin\caffe.exe test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel 
-pause
-```
-
-`run-train-mnist.txt` :
+来到 Caffe 的根目录 `D:\GitHub Repository\caffe` 新建文件: `run-train-mnist.txt` :
 
 ```
 build\x64\install\bin\caffe.exe  train --solver=examples/mnist/lenet_solver.prototxt    
 pause   
 ```
 
-修改文件名为 `run-test-mnist.bat` 和 `run-train-mnist.bat`。
-
-双击`run-train-mnist.bat`，开始训练数据，结束后，在`D:\GitHub Repository\caffe\examples\mnist` 生成权值文件，可供测试数据使用。
+修改文件名为 `run-train-mnist.bat` ，双击运行，开始训练数据，结束后，在`D:\GitHub Repository\caffe\examples\mnist` 生成权值文件，可供测试数据使用。
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180413caffemnist/6.jpg)
 
-双击`run-test-mnist.txt`，运行训练集。
+新建文件: `run-test-mnist.txt` :
+
+```
+build\x64\install\bin\caffe.exe test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel
+pause
+```
+
+修改文件名 `run-test-mnist.bat` ，双击运行训练集。
 
 顺带一提：
 
