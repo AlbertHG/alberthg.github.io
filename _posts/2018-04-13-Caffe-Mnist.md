@@ -64,6 +64,28 @@ pause
 
 其实第一个路径就是 exe 文件所在路径， 中间指定转换的数据类型，后面两个就是数据所在路径，最后一个是输出文件路径。
 
+当然也可以全部语句写在一个脚本上，并使用`if`语句做判断：
+
+```
+REM 设置DATA和TOOLS路径
+set DATA=../../data/mnist
+set TOOLS=..\..\build\x64\install\bin
+
+REM 设置要生成的数据格式，'REM'作用是注释该条语句 
+REM set BACKEND=leveldb  
+set BACKEND=lmdb  
+
+if exist mnist_train_%BACKEND%(
+  echo "exist mnist_train_%BACKEND%"
+) else (
+  echo "Creating %BACKEND%..."  
+  "%TOOLS%\convert_mnist_data.exe" %DATA%/train-images.idx3-ubyte %DATA%/train-labels.idx1-ubyte mnist_train_%BACKEND% --backend=%BACKEND%  
+  "%TOOLS%\convert_mnist_data.exe" %DATA%/t10k-images.idx3-ubyte %DATA%/t10k-labels.idx1-ubyte mnist_test_%BACKEND% --backend=%BACKEND% 
+)
+echo "Done."  
+pause  
+```
+
 生成结果：
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180413caffemnist/2.jpg)

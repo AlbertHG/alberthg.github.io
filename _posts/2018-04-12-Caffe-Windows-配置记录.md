@@ -46,7 +46,7 @@ tags:
     git checkout windows
     ```
 
-2. cuda_8.0.61_win10.exe下载地址。[cuda_8.0.61_win10](http://developer.download.nvidia.com/compute/cuda/8.0/secure/Prod2/local_installers/cuda_8.0.61_win10.exe?bTpbywXSHEK2JHjDU7Hu9OtYtQpYpB9QgRmNj7T42X75aAutlbYTaom16xfCy3Tj7pu0sKAmkMGbsq71yNVkOWy1og9rLDroL8vTQJCo__3AoQZQCkqyFF0tBPzsu1BNzsl30bBYbtw_w32wV0WlOV-ayW3NJLl9IS6pjbjysLrwsL8)
+2. cuda_8.0.61_win10.exe下载地址。[cuda_8.0.61_win10](https://developer.nvidia.com/cuda-80-ga2-download-archive)
 
     安装完成后，在系统环境变量会有如下环境变量:
     ```
@@ -106,7 +106,7 @@ tags:
     - 选择生产vs工程的版本：Visual Sutdio 14 2015 Win64
     - tooset 默认值，空
     - 勾选[Use default native compilers]
-*过程有下载依赖，时间较长。下载后压缩包放在camke-gui指定的编译目录下，我的在`C:\Users\ATuk\.caffe\dependencies\download`。如果速度慢或者没有科学上网的道友可以去`https://github.com/willyd/caffe-builder/releases/download/v1.1.0/libraries_v140_x64_py35_1.1.0.tar.bz2`下载，放在camke-gui指定的编译目录下。*  
+*过程有下载依赖，时间较长。下载后压缩包放在camke-gui指定的编译目录下，我的在`C:\Users\ATuk\.caffe\dependencies\download`。如果速度慢或者没有科学上网的道友可以去 [https://github.com/willyd/caffe-builder/releases/download/v1.1.0/libraries_v140_x64_py35_1.1.0.tar.bz2](https://github.com/willyd/caffe-builder/releases/download/v1.1.0/libraries_v140_x64_py35_1.1.0.tar.bz2) 下载，放在camke-gui指定的编译目录下。*  
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180412caffewin/2.jpg)
 
