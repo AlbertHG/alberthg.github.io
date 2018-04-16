@@ -64,15 +64,27 @@ tags:
     ```
     conda create -n Caffe_3_5 python=3.5.3
     ```
+
     然后将新创建的虚拟环境添加到Path环境变量：
+
     ```
     C:\ProgramData\Anaconda3\envs\Caffe_3_5
     C:\ProgramData\Anaconda3\envs\Caffe_3_5\Scripts
     ```
-    同时使用conda在新建的Caffe_3_5中安装下列软件包
+
+    要成功构建python界面，您需要添加以下conda通道：
+
+    ```
+    conda config --add channels conda-forge
+    conda config --add channels willyd
+    ```
+
+    同时使用conda在新建的Caffe_3_5中安装下列软件包：
+
     ```
     conda install -n Caffe_3_5 --yes cmake ninja numpy scipy protobuf==3.1.0 six scikit-image pyyaml pydotplus graphviz
     ```
+
 4. Matlab 2014a 的安装不赘述，没压力！
 
     添加Path环境变量
