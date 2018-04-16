@@ -4,7 +4,7 @@ title:      CASIA WebFaces 数据集
 subtitle:    "\"Deep Learning 数据集\""
 date:       2018-04-16
 author:     ATuk
-header-img: img/caffe.jpg
+header-img: img/dataset.jpg
 catalog: true
 tags:
     - dataset
