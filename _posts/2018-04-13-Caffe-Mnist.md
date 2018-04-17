@@ -12,7 +12,6 @@ tags:
     - python3
     - windows
     - 记录
-    - 备忘录
     - 笔记
 ---
 
