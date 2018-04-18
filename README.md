@@ -15,7 +15,7 @@
 	* [HTML5 演示文档布局](#keynote-layout)
 	* [评论](#comment)
 	* [网站分析](#analytics)
-	* [Laxte支持](#Laxte支持)
+	* [Latex支持](#latex支持)
 * 其他
 	* [自定义](#customization)
 	* [标题底图](#header-image)
@@ -165,7 +165,7 @@ ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就�
 ga_domain: auto			# 默认的是 auto
 ```
 
-### Laxte支持
+### Latex支持
 
 在`_include/head.html`文件下添加：
 
