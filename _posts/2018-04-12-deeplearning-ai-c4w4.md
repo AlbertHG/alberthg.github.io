@@ -171,7 +171,7 @@ $$d(A,P) \approx d(A,N)$$
 
 每组训练样本包含两张图片，每个siamese网络结构和参数完全相同。这样就把人脸识别问题转化成了一个二分类问题。引入逻辑输出层参数$w$和$b$，输出 $\hat y$ 表达式为：
 
-$$\hat y=\sigma(\sum_{k=1}^Kw_k|f(x^{(i)})\_k-f(x^{(j)})\_k|+b)$$
+$$\hat y=\sigma(\sum_{k=1}^Kw_k|f(x^{(i)})_ k-f(x^{(j)})_ k|+b)$$
 
 其中， $f(x^{(i)})$ 代表图片 $x^{(i)}$ 的编码，下标 $k$ 代表选择N维编码向量中的第 $k$ 个元素。
 
@@ -179,7 +179,7 @@ $$\hat y=\sigma(\sum_{k=1}^Kw_k|f(x^{(i)})\_k-f(x^{(j)})\_k|+b)$$
 g
 $\hat y$ 的另外一种表达式为：
 
-$$\hat y=\sigma(\sum_{k=1}^Kw_k\frac{(f(x^{(i)})\_k-f(x^{(j)})\_k)^2}{f(x^{(i)})\_k+f(x^{(j)})\_k}+b)$$
+$$\hat y=\sigma(\sum_{k=1}^Kw_k\frac{(f(x^{(i)})_ k-f(x^{(j)})_ k)^2}{f(x^{(i)})_ k+f(x^{(j)})_ k}+b)$$
 
 上式被称为 $\chi$ 方公式，也叫 $\chi$ 方相似度。
 
