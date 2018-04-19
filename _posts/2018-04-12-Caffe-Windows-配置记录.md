@@ -153,7 +153,7 @@ tags:
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180412caffewin/8.jpg)
 
-## 官方使用`build\_win.cmd`编译Caffe
+## 官方使用`build_win.cmd`编译Caffe
 
 [传送门](https://github.com/BVLC/caffe/tree/windows)
 

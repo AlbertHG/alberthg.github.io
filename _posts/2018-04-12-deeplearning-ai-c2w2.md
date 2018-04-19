@@ -295,7 +295,7 @@ $$\alpha = 0.95^{ epoch\\\_num } * \alpha\_0$$
 
 * 其他：
 
-$$\alpha = \frac{k}{\sqrt{epoch\\\_num}} * \alpha\_0$$
+$$\alpha = \frac{k}{\sqrt{epoch\\\_num}} * \alpha_0$$
 
 * 离散下降:
 
