@@ -18,7 +18,7 @@ tags:
 
 > 欢迎Star
 
-## 超参数调试处理
+## 超参数调试处理(Tuning process)
 
 目前已经讲到过的超参数中，重要程度依次是（仅供参考）：
 
@@ -45,11 +45,11 @@ tags:
 
 在实际应用中完全不知道哪个参数更加重要的情况下，随机采样的方式能有效解决这一问题，但是均匀采样做不到这点。
 
-为了得到更精确的最佳参数，我们应该继续对选定的区域进行由粗到细的采样（coarse to fine sampling scheme）。也就是放大表现较好的区域，再对此区域做更密集的随机采样。例如，对下图中右下角的方形区域再做 25 点的随机采样，以获得最佳参数。
+为了得到更精确的最佳参数，我们应该继续对选定的区域进行由粗到细的采样(coarse to fine sampling scheme)。也就是放大表现较好的区域，再对此区域做更密集的随机采样。例如，对下图中右下角的方形区域再做 25 点的随机采样，以获得最佳参数。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week3/md_images/03.jpg)
 
-## 为超参数选择合适的范围
+## 为超参数选择合适的范围(Using an appropriate scale to pick hyperparameters)
 
 在超参数选择的时候，一些超参数是在一个范围内进行均匀随机取值，如隐藏层神经元结点的个数、隐藏层的层数等。但是有一些超参数的选择做均匀随机取值是不合适的，这里需要按照一定的比例在不同的小范围内进行均匀随机取值。
 - 对于学习率 $α$，待调范围是$[0.0001, 1]$。如果使用均匀随机采样，那么有 90% 的采样点分布在$[0.1, 1]$之间，只有 10% 分布在$[0.0001, 0.1]$之间。这在实际应用中是不太好的，因为最佳的 $\alpha$ 值可能主要分布在$[0.0001, 0.1]$之间，而$[0.1, 1]$范围内 $\alpha$ 值效果并不好。因此我们更关注的是区间$[0.0001, 0.1]$，应该在这个区间内细分更多刻度。
@@ -70,7 +70,7 @@ r = np.power(10,r)
 
     - 至于为什么这么做：假设 $\beta$ 从 0.9000 变化为 0.9005 ，那么 $\frac{1}{1-\beta} $基本没有变化。但假设 $\beta$ 从 0.9990 变化为 0.9995 ，那么 $\frac{1}{1-\beta}$ 前后差别 1000。 $\beta$ 越接近 1 ，指数加权平均的个数越多，变化越大。所以对 $\beta$ 接近1的区间，应该采集得更密集一些。
 
-## 超参数调试实践:Pandas vs. Caviar
+## 超参数调试实践:Pandas vs. Caviar(Hyperparameters tuning in practice: Pandas vs. Caviar)
 
 如何搜索参数的过程大概分两种重要的思想流派，或者说人们通常采用的两种重要但不同的方法。
 
@@ -82,7 +82,7 @@ r = np.power(10,r)
 
 - 考虑到数据的变化或者服务器的变更等因素，建议每隔几个月至少一次，重新测试或评估超参数，来获得实时的最佳模型；
 
-## 网络中的正则化激活函数
+## 网络中的正则化激活函数(Normalizing activations in a network)
 
 **Batch 归一化** 会使你的参数搜索问题变得很容易，使神经网络对超参数的选择更加稳定，
 超参数范围会很庞大，工作效果也很好，也容易使你很容易地训练甚至是深层网络。
@@ -110,7 +110,7 @@ $$\tilde z^{(i)} = \gamma z^{(i)}_{norm} + \beta$$
 
 **设置 $γ$ 和 $β$ 的原因** 是：如果各隐藏层的输入均值在靠近 0 的区域，即处于激活函数的线性区域，不利于训练非线性神经网络，从而得到效果较差的模型。因此，需要用 $γ$ 和 $β$ 对标准化后的结果做进一步处理。
 
-## 在神经网络中融入Batch Norm
+## 在神经网络中融入Batch Norm(Fitting Batch Norm into a neural network)
 
 对于 $L$层神经网络，经过 Batch Normalization 的作用，整体流程如下：
 
@@ -120,7 +120,7 @@ $$\tilde z^{(i)} = \gamma z^{(i)}_{norm} + \beta$$
 
 除了传统的梯度下降算法之外，还可以使用我们之前介绍过的动量梯度下降、RMSprop或者Adam等优化算法。
 
-## Batch Norm 起作用的原因
+## Batch Norm 起作用的原因(Why does Batch Norm work?)
 
 Batch Normalization 效果很好的原因有以下两点：
 
@@ -131,15 +131,15 @@ Batch Normalization 效果很好的原因有以下两点：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week3/md_images/07.jpg)
 
-我们称发生了“Covariate Shift”。这种情况下，一般要对模型进行重新训练。Batch Normalization 的作用就是减小 Covariate Shift 所带来的影响，让模型变得更加健壮，鲁棒性（Robustness）更强。
+我们称发生了“Covariate Shift”。这种情况下，一般要对模型进行重新训练。Batch Normalization 的作用就是减小 Covariate Shift 所带来的影响，让模型变得更加健壮，鲁棒性(Robustness)更强。
 
 Batch Norm减少了各层 $W^{[l]}$ 、$B^{[l]}$ 之间的耦合性，让各层更加独立，实现自我训练学习的效果。也就是说，如果输入发生covariate shift，那么因为Batch Norm的作用，对个隐藏层输出 $Z^{[l]}$ 进行均值和方差的归一化处理， $W^{[l]}$ 和 $B^{[l]}$ 更加稳定，使得原来的模型(识别黑猫)也有不错的表现。针对上面这个黑猫的例子，如果我们使用深层神经网络，使用Batch Norm，那么该模型对花猫的识别能力(新能力)应该也是不错的。
 
-另外，Batch Normalization 也 **起到微弱的正则化**（regularization）效果。因为在每个 mini-batch 而非整个数据集上计算均值和方差，只由这一小部分数据估计得出的均值和方差会有一些噪声，因此最终计算出的 $\tilde z^{(i)}$也有一定噪声。类似于 dropout，这种噪声会使得神经元不会再特别依赖于任何一个输入特征。
+另外，Batch Normalization 也 **起到微弱的正则化**(regularization)效果。因为在每个 mini-batch 而非整个数据集上计算均值和方差，只由这一小部分数据估计得出的均值和方差会有一些噪声，因此最终计算出的 $\tilde z^{(i)}$也有一定噪声。类似于 dropout，这种噪声会使得神经元不会再特别依赖于任何一个输入特征。
 
 最后，不要将 Batch Normalization 作为正则化的手段，而是当作加速学习的方式。正则化只是一种非期望的副作用，Batch Normalization 解决的还是反向传播过程中的梯度问题（梯度消失和爆炸）。
 
-## 在测试数据上使用 Batch Norm
+## 在测试数据上使用 Batch Norm(Batch Norm at test time)
 
 训练过程中，Batch Norm是对单个mini-batch进行操作的，但在测试过程中，如果是单个样本，该如何使用Batch Norm进行处理呢？
 
@@ -154,11 +154,11 @@ $$z_{norm}^{(i)} = \frac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \epsilon}}$$
 
 $$\tilde z^{(i)} = \gamma z^{(i)}_{norm} + \beta$$
 
-其中， $\mu$ 和 $\sigma^2$ 是对单个mini-batch中所有$m$个样本求得的。在测试过程中，如果只有一个样本，求其均值和方差是没有意义的，就需要对 $\mu$ 和 $\sigma^2$ 进行估计。这个时候一般使用指数加权平均（exponentially weighted average）的方法来预测测试过程中单个样本的$\mu$ 和 $\sigma^2$
+其中， $\mu$ 和 $\sigma^2$ 是对单个mini-batch中所有$m$个样本求得的。在测试过程中，如果只有一个样本，求其均值和方差是没有意义的，就需要对 $\mu$ 和 $\sigma^2$ 进行估计。这个时候一般使用指数加权平均(exponentially weighted average)的方法来预测测试过程中单个样本的$\mu$ 和 $\sigma^2$
 
 指数加权平均的做法很简单，对于第 $l$ 层隐藏层，考虑所有mini-batch在该隐藏层下的 $\mu^{[l]} $和 $\sigma^{2[l]}$ ，然后用指数加权平均的方式来预测得到当前单个样本的 $\mu^{[l]}$ 和 $\sigma^{2[l]}$ 。这样就实现了对测试过程单个样本的均值和方差估计。最后，再利用训练过程得到的 $\gamma$ 和 $\beta$ 值计算出各层的 $\tilde z^{(i)}$ 值。
 
-## Softmax 回归
+## Softmax 回归(Softmax Regression)
 
 目前为止，介绍的分类例子都是二分类问题：神经网络输出层只有一个神经元，表示预测输出 $\hat y$是正类的概率
 $ P(y = 1|x) $
@@ -182,7 +182,7 @@ $$\sum^C_{i=1}a^{[L]}_i = 1$$
 
 所有的 $a^{[L]}_i$ ，即 $\hat y$ ，维度为(C, 1)。
 
-## 训练 Sotfmax 分类器
+## 训练 Sotfmax 分类器(Training a softmax classifier)
 
 一个直观的例子：
 

@@ -18,13 +18,13 @@ tags:
 
 > 欢迎Star
 
-## 为什么要进行实例探究
+## 为什么要进行实例探究(Why look at case studies?)
 
 计算机视觉研究中的大量研究都集中在如何把这些基本构件组合起来，形成有效的卷积神经网络。最直观的方式之一就是去看一些案例，就像很多人通过看别人的代码来学习编程一样，通过研究别人构建有效组件的案例是个不错的办法。实际上在计算机视觉任务中表现良好的神经网络框架往往也适用于其它任务。也就是说，如果有人已经训练或者计算出擅长识别猫、狗、人的神经网络或者神经网络框架，而你的计算机视觉识别任务是构建一个自动驾驶汽车，你完全可以借鉴别人的神经网络框架来解决自己的问题。
 
-## 经典网络
+## 经典网络(Classic networks)
 
-### LeNet-5
+#### LeNet-5
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/01.png)
 
@@ -38,10 +38,10 @@ tags:
 
 * LeNet-5 针对灰度图像而训练，因此输入图片的通道数为 1。
 * 该模型总共包含了约 6 万个参数，远少于标准神经网络所需。
-* 典型的 LeNet-5 结构包含卷积层（CONV layer），池化层（POOL layer）和全连接层（FC layer），排列顺序一般为 CONV layer->POOL layer->CONV layer->POOL layer->FC layer->FC layer->OUTPUT layer。一个或多个卷积层后面跟着一个池化层的模式至今仍十分常用。
+* 典型的 LeNet-5 结构包含卷积层(CONV layer)，池化层(POOL layer)和全连接层(FC layer)，排列顺序一般为 CONV layer->POOL layer->CONV layer->POOL layer->FC layer->FC layer->OUTPUT layer。一个或多个卷积层后面跟着一个池化层的模式至今仍十分常用。
 * 当 LeNet-5模型被提出时，其池化层使用的是平均池化，而且各层激活函数一般选用 Sigmoid 和 tanh。现在，我们可以根据需要，做出改进，使用最大池化并选用 ReLU 作为激活函数。
 
-### AlexNet
+#### AlexNet
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/02.png)
 
@@ -52,7 +52,7 @@ tags:
 
 相关论文：[Krizhevsky et al.,2012. ImageNet classification with deep convolutional neural networks](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)。这是一篇易于理解并且影响巨大的论文，计算机视觉群体自此开始重视深度学习。
 
-### VGG
+#### VGG
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/03.png)
 
@@ -67,15 +67,15 @@ tags:
 
 **建议从介绍 AlexNet 的论文开始，然后就是 VGG 的论文，最后是 LeNet 的论文。**
 
-## 残差网络
+## 残差网络(Residual Networks(ResNets))
 
-非常深的网络很难训练，存在着梯度消失和梯度爆炸的问题，但是通过跳跃连接（Skip connection），可以从某一层网络层获取激活，然后迅速反馈给另外一层。
+非常深的网络很难训练，存在着梯度消失和梯度爆炸的问题，但是通过跳跃连接(Skip connection)，可以从某一层网络层获取激活，然后迅速反馈给另外一层。
 
-ResNet是由残差块（Residual block）构成：
+ResNet是由残差块(Residual block)构成：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/04.jpg)
 
-**残差块（Residual block）**。通过**捷径（Short cut，或者称跳远连接，Skip connections）**可以将 $a^{[l]}$添加到第二个 ReLU 过程中，直接建立 $a^{[l]}$与 $a^{[l+2]}$之间的隔层联系。表达式如下：
+**残差块(Residual block)**。通过**捷径（Short cut，或者称跳远连接，Skip connections）**可以将 $a^{[l]}$添加到第二个 ReLU 过程中，直接建立 $a^{[l]}$与 $a^{[l+2]}$之间的隔层联系。表达式如下：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/08.jpg)
 
@@ -91,7 +91,7 @@ ResNet是由残差块（Residual block）构成：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/05.jpg)
 
-为了便于区分，在 ResNets 的论文[He et al., 2015. Deep residual networks for image recognition](https://arxiv.org/pdf/1512.03385.pdf)中，非残差网络被称为**普通网络（Plain Network）**。将它变为残差网络的方法是加上所有的跳远连接。
+为了便于区分，在 ResNets 的论文[He et al., 2015. Deep residual networks for image recognition](https://arxiv.org/pdf/1512.03385.pdf)中，非残差网络被称为**普通网络(Plain Network)**。将它变为残差网络的方法是加上所有的跳远连接。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/06.jpg)
 
@@ -99,7 +99,7 @@ ResNet是由残差块（Residual block）构成：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/07.jpg)
 
-## 为什么残差有用？
+## 为什么残差有用？(Why ResNets work?)
 
 假设有一个大型神经网络，其输入为 $X$，输出为 $a^{[l]}$。给这个神经网络额外增加两层，输出为 $a^{[l+2]}$。将这两层看作一个具有跳远连接的残差块。为了方便说明，假设整个网络中都选用 ReLU 作为激活函数，包括输入 X 的非零异常值,因此输出的所有激活值都大于等于 0。
 
@@ -130,7 +130,7 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 普通网络和 ResNets 网络常用的结构是：卷积层-卷积层-卷积层-池化层-卷积层-卷积层-卷积层-池化层……依此重复。直到最后，有一个通过 softmax 进行预测的全连接层。
 
-## 网络中的网络以及1x1卷积
+## 网络中的网络以及1x1卷积(Network in Network and 1×1 convolutions)
 
 1x1 卷积（1x1 convolution，或称为 Network in Network）指过滤器的尺寸为 1。当通道数为 1 时，1x1 卷积意味着卷积操作等同于乘积操作。
 
@@ -144,15 +144,15 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 如果过滤器不止一个，而是多个（filters个），就好像有多个输入单元，输出结果是 6×6x#filters（过滤器数量）。
 
-池化能压缩数据的高度（$n\_H$）及宽度（$n\_W$），而 1×1 卷积能压缩数据的通道数（$n\_C$）。在如下图所示的例子中，用 32 个大小为 1×1×192 的滤波器进行卷积，就能使原先数据包含的 192 个通道压缩为 32 个。
+池化能压缩数据的高度($n\_H$)及宽度($n\_W$)，而 1×1 卷积能压缩数据的通道数($n\_C$)。在如下图所示的例子中，用 32 个大小为 1×1×192 的滤波器进行卷积，就能使原先数据包含的 192 个通道压缩为 32 个。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/13.png)
 
-1×1 卷积层就是这样实现了一些重要功能的（doing something pretty non-trivial），它给神经网络添加了一个非线性函数，从而减少或保持输入层中的通道数量不变，也可以增加通道数量。这对构建 Inception 网络很有帮助。
+1×1 卷积层就是这样实现了一些重要功能的(doing something pretty non-trivial)，它给神经网络添加了一个非线性函数，从而减少或保持输入层中的通道数量不变，也可以增加通道数量。这对构建 Inception 网络很有帮助。
 
 虽然论文[Lin et al., 2013. Network in network](https://arxiv.org/pdf/1312.4400.pdf)中关于架构的详细内容并没有得到广泛应用，但是 1x1 卷积的理念十分有影响力，许多神经网络架构（包括 Inception 网络）都受到它的影响。
 
-## 谷歌Inception网络简介
+## 谷歌Inception网络简介(Inception network motivation)
 
 在之前的卷积网络中，我们只能选择单一尺寸和类型的滤波器。而 **Inception 网络的作用** 即是代替人工来确定卷积层中的过滤器尺寸与类型，或者确定是否需要创建卷积层或池化层。
 
@@ -170,7 +170,7 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/16.png)
 
-对于同一个例子，我们使用 1x1 卷积把输入数据从 192 个通道减少到 16 个通道，然后对这个较小层运行 5x5 卷积，得到最终输出。这个 1x1 的卷积层通常被称作 **瓶颈层（Bottleneck layer）** 。
+对于同一个例子，我们使用 1x1 卷积把输入数据从 192 个通道减少到 16 个通道，然后对这个较小层运行 5x5 卷积，得到最终输出。这个 1x1 的卷积层通常被称作 **瓶颈层(Bottleneck layer)** 。
 
 改进后的计算量为 28x28x192x16 + 28x28x32x5x5x15 = 1.24 千万，减少了约 90%。
 
@@ -178,7 +178,7 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 也就是说，要合理构建瓶颈层，就可以既显著缩小计算规模，又不会降低网络性能。
 
-## Inception网络
+## Inception网络(Inception network)
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/17.jpg)
 
@@ -199,11 +199,11 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/21.png)
 
-## 使用开源的实现方案
+## 使用开源的实现方案(Using open-source implementations)
 
 开发一个计算机视觉应用，一个常见的工作流程是，先选择一个喜欢的架构，或许是在这门课中学习到的，或者是你从朋友那听说的，或者是从文献中看到的，接着寻找一个开源实，从 GitHub 下载下来，以此基础开始构建。这样做的优点在于，这些网络通常都需要很长的时间来训练，而或许有人已经使用多个 GPU，通过庞大的数据集预先训练了这些网络，这样一来你就可以使用这些网络进行迁移学习。
 
-## 迁移学习
+## 迁移学习(Transfer Learning)
 
 相比于从头训练权重，或者说从随机初始化权重开始，如果下载别人已经训练好网络结构的权重，通常能够进展的相当快，用这个作为预训练，然后转换到感兴趣的任务上，社区经常使用得数据集：比如 ImageNet，或者 MS COCO，或者 Pascal。
 
@@ -223,16 +223,16 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week2/md_images/20.jpg)
 
-## 数据扩充
+## 数据扩充(Data augmentation)
 
-计算机视觉领域的应用都需要大量的数据。当数据不够时，**数据扩增（Data Augmentation）** 就有帮助。常用的数据扩增包括：
+计算机视觉领域的应用都需要大量的数据。当数据不够时，**数据扩增(Data Augmentation)** 就有帮助。常用的数据扩增包括：
 
 - 镜像翻转；
 - 随机裁剪；
 - 色彩转换：给 R、G 和 B 三个通道上加上不同的失真值，改变图片色调。
-    - **PCA 颜色增强** ：指更有针对性地对图片的 RGB 通道进行主成分分析（Principles Components Analysis，PCA），对主要的通道颜色进行增加或减少，比如说，如果你的图片呈现紫色，即主要含有红色和蓝色，绿色很少，然后 PCA 颜色增强算法就会对红色和蓝色增减很多，绿色变化相对少一点，所以使总体的颜色保持一致。
+    - **PCA 颜色增强** ：指更有针对性地对图片的 RGB 通道进行主成分分析(Principles Components Analysis，PCA)，对主要的通道颜色进行增加或减少，比如说，如果你的图片呈现紫色，即主要含有红色和蓝色，绿色很少，然后 PCA 颜色增强算法就会对红色和蓝色增减很多，绿色变化相对少一点，所以使总体的颜色保持一致。
 
-## 计算机视觉现状
+## 计算机视觉现状(The state of computer vision)
 
 大部分机器学习问题是介于少量数据和大量数据范围之间，也就是说，如何将少量数据训练的应用很好的运用到现实生活中去。
 
@@ -240,14 +240,14 @@ $$a^{[l+2]} = g(a^{[l]}) = ReLU(a^{[l]}) = a^{[l]}$$
 - 相反当你没有那么多的数据时，那时你会看到人们从事更多的是手工工程，低调点说就是你有很多小技巧可用。
 
 通常我们的学习算法有两种知识来源：
-1. 被标记的数据，就像（x，y）应用在监督学习。
+1. 被标记的数据，就像(x，y)应用在监督学习。
 2. 手工工程，有很多方法去建立一个手工工程系统，它可以是源于精心设计的特征，手工精心设计的网络体系结构或者是系统的其他组件。
 
 当然，当数据量不够的时候，我们还有“迁移学习”这一个有效的办法。
 
 另外，在模型研究或者竞赛方面，有一些方法能够有助于提升神经网络模型的性能：
 
-* 集成（Ensembling）：独立地训练几个神经网络，并平均它们的输出。假设你的 7 个神经网络，它们有 7 个不同的预测，然后平均他们，这可能会让你在基准上提高 1%，2%或者更好。
+* 集成(Ensembling)：独立地训练几个神经网络，并平均它们的输出。假设你的 7 个神经网络，它们有 7 个不同的预测，然后平均他们，这可能会让你在基准上提高 1%，2%或者更好。
 * Multi-crop at test time：将数据扩增应用到测试集，对结果进行平均。
 
 但是由于这些方法计算和内存成本较大，一般不适用于构建实际的生产项目。

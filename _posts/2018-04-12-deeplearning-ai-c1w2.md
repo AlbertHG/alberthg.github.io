@@ -18,7 +18,7 @@ tags:
 
 > 欢迎Star
 
-## Logistic 回归
+## Logistic 回归(Logistic Regression)
 
 Logistic 回归是一个用于二分分类的算法。
 
@@ -37,13 +37,13 @@ Logistic 回归可以看作是一个非常小的神经网络。下图是一个�
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/01-Neural%20Networks%20and%20Deep%20Learning/week2/md_images/01.png)
 
-## Logistic 回归的损失函数
+## Logistic 回归的损失函数(Logistic Regression Cost Function)
 
-**损失函数（loss function）** 用于衡量预测结果与真实值之间的误差。
+**损失函数(loss function)** 用于衡量预测结果与真实值之间的误差。
 
 最简单的损失函数定义方式为平方差损失：$$L(\hat{y},y) = \frac{1}{2}(\hat{y}-y)^2$$
 
-这是因为上面的平方错误损失函数一般是非凸函数（non-convex），其在使用低度下降算法的时候，容易得到局部最优解，而不是全局最优解。因此要选择凸函数。
+这是因为上面的平方错误损失函数一般是非凸函数(non-convex)，其在使用低度下降算法的时候，容易得到局部最优解，而不是全局最优解。因此要选择凸函数。
 
 一般使用$$L(\hat{y},y) = -(y\log\hat{y})+(1-y)\log(1-\hat{y})$$
 
@@ -51,13 +51,13 @@ Logistic 回归可以看作是一个非常小的神经网络。下图是一个�
 - 当 $y=0$ 时， $L(\hat y, y)=-\log (1-\hat y)$ 。如果 $\hat y$ 越接近 0， $L(\hat y, y) \approx 0$ ，表示预测效果越好；如果 $\hat y$ 越接近 1， $L(\hat y, y) \approx +\infty$ ，表示预测效果越差；
 - 我们的目标是最小化样本点的损失Loss Function，损失函数是针对单个样本点的。
 
-损失函数是在单个训练样本中定义的，它衡量了在 **单个** 训练样本上的表现。而**成本函数（cost function，或者称作成本函数）** 衡量的是在 **全体** 训练样本上的表现，即衡量参数 $w $和 $b$ 的效果。
+损失函数是在单个训练样本中定义的，它衡量了在 **单个** 训练样本上的表现。而**成本函数(cost function，或者称作成本函数)** 衡量的是在 **全体** 训练样本上的表现，即衡量参数 $w $和 $b$ 的效果。
 
 $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})$$
 
-## 梯度下降法
+## 梯度下降法(Gradient Descent)
 
-函数的 **梯度（gradient）** 指出了函数的最陡增长方向。即是说，按梯度的方向走，函数增长得就越快。那么按梯度的负方向走，函数值自然就降低得最快了。
+函数的 **梯度(gradient)** 指出了函数的最陡增长方向。即是说，按梯度的方向走，函数增长得就越快。那么按梯度的负方向走，函数值自然就降低得最快了。
 
 模型的训练目标即是寻找合适的 $w$与 $b$ 以最小化代价函数值。简单起见我们先假设$ w$与 $b$ 都是一维实数，那么可以得到如下的 $J$ 关于$ w $与$ b $的图：
 
@@ -80,7 +80,7 @@ $$b := b - \alpha\frac{dJ(w, b)}{db}$$
 
 在程序代码中，我们通常使用`dw` 来表示 $\dfrac{\partial J(w,b)}{\partial w}$ ，用`db`来表示 $\dfrac{\partial J(w,b)}{\partial b}$ 。
 
-## 逻辑回归的梯度下降法
+## 逻辑回归的梯度下降法(Logistic Regression Gradient Descent)
 
 假设输入的特征向量维度为 2，即输入参数共有 $x_1, w_1, x_2, w_2, b$ 这五个。可以推导出如下的计算图：
 
@@ -109,7 +109,7 @@ $$w_{2}:=w_{2}-\alpha dw_{2} $$
 
 $$b:=b-\alpha db $$
 
-## m个样本的梯度下降法
+## m个样本的梯度下降法(Gradient Descent on m Examples)
 
 接下来我们需要将对于单个用例的损失函数扩展到整个训练集的成本函数：
 
@@ -124,7 +124,7 @@ $$dw_{1} = \frac{\partial J(w,b)}{\partial{w_1}}=\frac{1}{m}\sum^m_{i=1}\frac{\p
 
 $$db = \dfrac{1}{m}\sum_{i=1}^{m}(a^{(i)}-y^{(i)}) $$
 
-## 向量化
+## 向量化(Vectorization)
 
 在 Logistic 回归中，需要计算 $$z=w^Tx+b$$如果是非向量化的循环方式操作，代码可能如下：
 
@@ -141,7 +141,7 @@ z += b
 z = np.dot(w, x) + b
 ```
 
-不用显式 for 循环，实现 Logistic 回归的梯度下降一次迭代（这里公式和 NumPy 的代码混杂，注意分辨）：
+不用显式 for 循环，实现 Logistic 回归的梯度下降一次迭代(这里公式和 NumPy 的代码混杂，注意分辨：
 
 $$Z=w^TX+b=np.dot(w.T, x) + b$$
 $$A=\sigma(Z)$$
@@ -153,7 +153,7 @@ $$b:=b-\sigma db$$
 
 正向和反向传播尽管如此，多次迭代的梯度下降依然需要 for 循环。
 
-## Python 广播
+## Python 广播(Broadcasting in Python)
 
 Numpy 的 Universal functions 中要求输入的数组 shape 是一致的。当数组的 shape 不相等的时候，则会使用广播机制，调整数组使得 shape 一样，满足规则，则可以运算，否则就出错。
 

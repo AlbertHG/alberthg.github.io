@@ -20,7 +20,7 @@ tags:
 
 ## 目标定位(Object localization)
 
-定位分类问题这意味着，不仅要用算法判断图片中是不是一辆汽车，还要在图片中标记出它的位置，用边框（Bounding Box）把目标物体圈起来。一般来说，定位分类问题通常只有一个较大的对象位于图片中间位置；而在对象检测问题中，图片可以含有多个对象，甚至单张图片中会有多个不同分类的对象。
+定位分类问题这意味着，不仅要用算法判断图片中是不是一辆汽车，还要在图片中标记出它的位置，用边框(Bounding Box)把目标物体圈起来。一般来说，定位分类问题通常只有一个较大的对象位于图片中间位置；而在对象检测问题中，图片可以含有多个对象，甚至单张图片中会有多个不同分类的对象。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week3/md_images/01.jpg)
 
@@ -68,7 +68,7 @@ $$
 
 ## 目标检测(Object detection)
 
-想要实现目标检测，可以采用 **基于滑动窗口的目标检测（Sliding Windows Detection）** 算法。
+想要实现目标检测，可以采用 **基于滑动窗口的目标检测(Sliding Windows Detection)** 算法。
 
 实现目标检测的要点：
 
@@ -116,13 +116,13 @@ $$
 
 ## Bounding Box预测(Bounding box predictions)
 
-卷积方式实现的滑动窗口算法，使得在预测时计算的效率大大提高。但是其存在的问题是：不能输出最精准的边界框（Bounding Box）。
+卷积方式实现的滑动窗口算法，使得在预测时计算的效率大大提高。但是其存在的问题是：不能输出最精准的边界框(Bounding Box)。
 
 假设窗口滑动到蓝色方框的地方，这不是一个能够完美匹配汽车位置的窗口，所以我们需要寻找更加精确的边界框。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week3/md_images/07.jpg)
 
-YOLO（You Only Look Once）算法可以解决这类问题，生成更加准确的目标区域（如上图红色窗口）。
+YOLO(You Only Look Once)算法可以解决这类问题，生成更加准确的目标区域（如上图红色窗口）。
 
 YOLO算法首先将原始图片分割成n x n网格，每个网格代表一块区域。为简化说明，下图中将图片分成3 x 3网格。
 
@@ -173,9 +173,9 @@ IoU可以表示任意两块区域的接近程度。IoU值介于0～1之间，且
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week3/md_images/11.jpg)
 
-- 算法首先审视每一个概率高（$P_c>=0.6$）的格子，在上图中，分别由5个格子表示检测出车子的概率很高，分别是0.8、0.7、0.9、0.6、0.7。
+- 算法首先审视每一个概率高($P_c>=0.6$)的格子，在上图中，分别由5个格子表示检测出车子的概率很高，分别是0.8、0.7、0.9、0.6、0.7。
 - 首先看概率最大的，这里是0.9，，然后将剩下的4个格子分别和0.9的这个格子做交并比计算，发现右边为0.6和0.7的两个格子和0.9的交并比很大，则将这两个格子抑制（舍弃）。
-- 接下来，再次审视剩下的格子（0.8，0.7），找出概率最大的那一个，这里是0.8，然后再次将该格子和剩下的格子（0.7）进行交并比计算，舍弃掉交并比很大的格子，这里剩下的0.7被舍弃。
+- 接下来，再次审视剩下的格子(0.8，0.7)，找出概率最大的那一个，这里是0.8，然后再次将该格子和剩下的格子(0.7)进行交并比计算，舍弃掉交并比很大的格子，这里剩下的0.7被舍弃。
 - 最后剩下左边的0.8和右边的0.9两个格子。
 
 这就是非极大值抑制，非极大值意味着你只输出概率最大的分类结果，同时抑制那些不是极大值，却比较接近极大值的边界框。
@@ -198,7 +198,7 @@ $y_{i} = \left[ P_{c}\ b_{x}\ b_{y}\ b_{h}\ b_{w}\ c_{1}\ c_{2}\ c_{3}\ P_{c}\ b
 
 用这样的多目标向量分别对应不同的Anchor box，从而检测出多个重叠的目标。
 
-如下面的图片，里面有行人和汽车，在经过了极大值抑制操作之后，最后保留了两个边界框（Bounding Box）。对于行人形状更像Anchor box 1，汽车形状更像Anchor box 2，所以我们将人和汽车分配到不同的输出位置。具体分配，对应下图颜色。
+如下面的图片，里面有行人和汽车，在经过了极大值抑制操作之后，最后保留了两个边界框(Bounding Box)。对于行人形状更像Anchor box 1，汽车形状更像Anchor box 2，所以我们将人和汽车分配到不同的输出位置。具体分配，对应下图颜色。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week3/md_images/13.jpg)
 
@@ -251,7 +251,7 @@ Anchor box 的选择：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week3/md_images/15.png)
 
-3. 运行非最大值抑制（NMS）(为展示效果，换一张复杂的图)：
+3. 运行非最大值抑制(NMS)（为展示效果，换一张复杂的图）：
 
     - （编号1）假设使用了2个Anchor box，那么对于每一个网格，我们都会得到预测输出的2个bounding boxes，其中一个$P_c$比较高；
     - （编号2）抛弃概率$P_c$值低的预测bounding boxes；
@@ -261,7 +261,7 @@ Anchor box 的选择：
 
 ## 候选区域(选修)(Region proposals (Optional))
 
-R-CNN（Regions with convolutional networks），会在我们的图片中选出一些目标的候选区域，从而避免了传统滑动窗口在大量无对象区域的无用运算。
+R-CNN(Regions with convolutional networks)，会在我们的图片中选出一些目标的候选区域，从而避免了传统滑动窗口在大量无对象区域的无用运算。
 
 所以在使用了R-CNN后，我们不会再针对每个滑动窗口运算检测算法，而是只选择一些候选区域的窗口，在少数的窗口上运行卷积网络。
 

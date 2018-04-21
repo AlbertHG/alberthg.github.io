@@ -20,14 +20,14 @@ tags:
 
 ## 什么是人脸识别？(What is face recognition?)
 
-人脸识别的相关文献中，常见到两个概念：人脸验证（face verification）和人脸识别（face recognition）。
+人脸识别的相关文献中，常见到两个概念：人脸验证(face verification)和人脸识别(face recognition)。
 
 - 人脸验证：
     - Input：图片、名字/ID；
     - Output：输入的图片是否是对应的人；
     - 1 to 1 问题。
 
-- 人脸识别（Recognition）：
+- 人脸识别(Recognition)：
 
     - 拥有一个具有K个人的数据库；
     - 输入一副人脸图片；
@@ -94,13 +94,13 @@ $||f(x^{(1)})-f(x^{(2)})||^2$
 
 #### 1. 学习目标 ：
 
-为了使用Triplet 损失函数，我们需要比较成对的图像（三元组术语），Triplet Loss需要每个样本包含三张图片：靶目标（Anchor）、正例（Positive）、反例（Negative）：
+为了使用Triplet 损失函数，我们需要比较成对的图像（三元组术语），Triplet Loss需要每个样本包含三张图片：靶目标(Anchor)、正例(Positive)、反例(Negative)：
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week4/md_images/03.jpg)
 
-- Anchor （A）： 目标图片；
-- Positive（P）：与Anchor 属于同一个人的图片；
-- Negative（N）：与Anchor不属于同一个人的图片。
+- Anchor (A)： 目标图片；
+- Positive(P)：与Anchor 属于同一个人的图片；
+- Negative(N)：与Anchor不属于同一个人的图片。
 
 我们希望上一小节构建的CNN网络的Anchor输出编码 $f(A)$ 接近 Positive的输出编码$f(P)$ ；而对于Anchor 和Negative，我们希望他们编码（分别是$f(A)$，$f(N)$）的差异大一些。所以我们的目标以编码差的范数来表示为：
 
@@ -271,7 +271,7 @@ $a^{[l] (C)}$ 与$ a^{[l] (G)} $越相似，则 $J_{content}(C,G)$ 越小。方�
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week4/md_images/14.jpg)
 
-现在，定义图片的风格矩阵（style matrix）为：
+现在，定义图片的风格矩阵(style matrix)为：
 
 $$G_{kk'}^{[l]}=\sum_{i=1}^{n_H^{[l]}}\sum_{j=1}^{n_W^{[l]}}a_{ijk}^{[l]}a_{ijk'}^{[l]}$$
 

@@ -40,12 +40,12 @@ tags:
 
 ## 参考文献：
 
-[1] LFW，http : //vis-www.cs.umass.edu/lfw/
+[1] LFW, http://vis-www.cs.umass.edu/lfw/ 
 
-[2] D. Chen，X. Cao，L. Wang，F. Wen，and J. Sun。“重访贝叶斯面孔：一种联合表述”。在ECCV 2012，第566-579页。Springer，2012.
+[2] D. Chen, X. Cao, L. Wang, F. Wen, and J. Sun. “Bayesian face revisited: A joint formulation”. In ECCV 2012, pages 566–579. Springer, 2012. 
 
-[3] Y. Sun，X. Wang，and X. Tang。“通过联合身份验证进行深度学习的人脸表征”。arXiv预印本arXiv：1406.4773,2014。
+[3] Y. Sun, X. Wang, and X. Tang. “Deep learning face representation by joint identification-verification”. arXiv preprint arXiv:1406.4773, 2014. 
 
-[4] Y.泰格曼，M.杨，M. Ranzato和L.沃尔夫。“深层面：缩小面部验证中人类表现的差距”。在计算机视觉和模式识别（CVPR），2014年IEEE会议上，第1701-1708页。IEEE，2014.
+[4] Y. Taigman, M. Yang, M. Ranzato, and L. Wolf. “Deepface: Closing the gap to human-level performance in face verification”. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1701–1708. IEEE, 2014. 
 
-[5] CARC，http://bcsiriuschen.github.io/CARC/
+[5] CARC, http://bcsiriuschen.github.io/CARC/

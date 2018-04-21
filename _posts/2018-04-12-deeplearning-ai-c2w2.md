@@ -18,7 +18,7 @@ tags:
 
 > 欢迎Star
 
-## Mini-batch梯度下降
+## Mini-batch梯度下降(Mini-batch gradient descent)
 
 batch 梯度下降法（批梯度下降法，我们之前一直使用的梯度下降法）是最常用的梯度下降形式，即同时处理整个训练集。其在更新参数时使用所有的样本来进行更新。
 
@@ -56,9 +56,9 @@ batch 梯度下降法和 Mini-batch 梯度下降法代价函数的变化趋势�
 
 之所以出现细微振荡的原因是不同的mini-batch之间是有差异的。例如可能第一个子集 $(X^{\{1\}},Y^{\{1\}})$ 是好的子集，而第二个子集 $(X^{\{2\}},Y^{\{2\}})$ 包含了一些噪声 noise。出现细微振荡是正常的。
 
-batch 的不同大小（size）带来的影响
+batch 的不同大小(size)带来的影响
 
-* mini-batch 的大小为 1，即是 **随机梯度下降法（stochastic gradient descent）**，每个样本都是独立的 mini-batch；
+* mini-batch 的大小为 1，即是 **随机梯度下降法(stochastic gradient descent)**，每个样本都是独立的 mini-batch；
     - 对每一个训练样本执行一次梯度下降，但是丢失了向量化带来的计算加速；
     - Cost function总体的趋势向最小值的方向下降，但是无法到达全局最小值点，呈现波动的形式。
 * mini-batch 的大小为 m（数据集大小），即是 batch 梯度下降法；
@@ -92,9 +92,9 @@ shuffled_X = X[:, permutation]
 shuffled_Y = Y[:, permutation].reshape((1,m))
 ```
 
-## 指数加权平均
+## 指数加权平均(Exponentially weighted averages)
 
-**指数加权平均（Exponentially Weight Average）** 是一种常用的序列数据处理方式，计算公式为：
+**指数加权平均(Exponentially Weight Average)** 是一种常用的序列数据处理方式，计算公式为：
 
 $$
 s_t = \begin{cases} Y_1, &t = 1 \\\ \beta Y_t + (1-\beta)s_{t-1}, &t > 1 \end{cases}$$
@@ -115,7 +115,7 @@ $β$ 越大相当于求取平均利用的天数越多，曲线自然就会越平
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week2/md_images/03.png)
 
-## 理解指数加权平均
+## 理解指数加权平均(Understanding Exponentially weighted averages)
 
 当 $β$ 为 0.9 时:
 
@@ -129,7 +129,7 @@ $β$ 越大相当于求取平均利用的天数越多，曲线自然就会越平
 
 $$v_{100} = 0.1\theta_{100} + 0.1 * 0.9\theta_{99} + 0.1 * {(0.9)}^2\theta_{98} + ...$$
 
-其中 $θ_i$ 指第 $i$ 天的实际数据。所有 $θ$ 前面的系数（不包括 0.1，比如$\theta_{100}$的指数为 1 ，$\theta_{99}$的指数为 0.9……）相加起来为 1 或者接近于 1，这些系数被称作 **偏差修正（Bias Correction）**。
+其中 $θ_i$ 指第 $i$ 天的实际数据。所有 $θ$ 前面的系数（不包括 0.1，比如$\theta_{100}$的指数为 1 ，$\theta_{99}$的指数为 0.9……）相加起来为 1 或者接近于 1，这些系数被称作 **偏差修正(Bias Correction)**。
 
 我们将指数加权平均公式的一般形式写下来：
 
@@ -158,7 +158,7 @@ $$v := \beta v + (1 - \beta)\theta_t$$
 
 指数加权平均数公式的好处之一在于它只需要一行代码，且占用极少内存，因此 **效率极高，且节省成本** 。
 
-## 指数加权平均的偏差修正
+## 指数加权平均的偏差修正(Bias correction in exponentially weighted averages)
 
 在我们执行指数加权平均的公式时，当 ￥\beta=0.98￥ 时，我们得到的并不是图中的绿色曲线，而是下图中的紫色曲线，其起点比较低。
 
@@ -177,9 +177,9 @@ $$\frac{v\_t}{1-\beta^t} = \beta v_{t-1} + (1 - \beta)\theta_t$$
 
 偏差修正得到了绿色的曲线，在开始的时候，能够得到比紫色曲线更好的计算平均的效果。随着 $t$ 逐渐增大， $\beta^{t}$ 接近于 0，所以后面绿色的曲线和紫色的曲线逐渐重合了。
 
-## momentum梯度下降
+## momentum梯度下降(Gradient descent with momentum)
 
-**动量梯度下降（Gradient Descent with Momentum）** 的基本思想就是计算梯度的指数加权平均数，并利用该梯度来更新权重。
+**动量梯度下降(Gradient Descent with Momentum)** 的基本思想就是计算梯度的指数加权平均数，并利用该梯度来更新权重。
 
 在我们优化 Cost function 的时候，以下图所示的函数图为例：
 
@@ -211,7 +211,7 @@ $dw$，$db$ 想象成球的加速度；而 $v\_{dw}$、$v\_{db}$ 相当于速度
 
 ## RMSprop
 
-**RMSProp（Root Mean Square Prop，均方根支）** 算法是在对梯度进行指数加权平均的基础上，引入平方和平方根。每次迭代训练过程中，其权重W和常数项b的更新表达式为，具体过程为（省略了 $l$）：
+**RMSProp（Root Mean Square Prop，均方根）** 算法是在对梯度进行指数加权平均的基础上，引入平方和平方根。每次迭代训练过程中，其权重W和常数项b的更新表达式为，具体过程为（省略了 $l$）：
 
 $$s_{dw} = \beta s_{dw} + (1 - \beta)(dw)^2$$
 $$s_{db} = \beta s_{db} + (1 - \beta)(db)^2$$
@@ -220,7 +220,7 @@ $$b := b - \alpha \frac{db}{\sqrt{s_{db} + \epsilon}}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week2/md_images/07.jpg)
 
-从图中可以看出，梯度下降（蓝色折线）在垂直方向（$b$）上振荡较大，在水平方向（$W$）上振荡较小，表示在b方向上梯度较大，即 $db$ 较大，而在W方向上梯度较小，即  $dW$ 较小。因此，上述表达式中 $S_b$ 较大，而 $S_W$ 较小。在更新W和b的表达式中，变化值 $\frac{dW}{\sqrt{S_W}}$ 较大，而 $\frac{db}{\sqrt{S_b}}$ 较小。也就使得W变化得多一些，$b$ 变化得少一些。即加快了 $W$ 方向的速度，减小了 $b$ 方向的速度，减小振荡，实现快速梯度下降算法，其梯度下降过程如绿色折线所示。总得来说，就是如果哪个方向振荡大，就减小该方向的更新速度，从而减小振荡。
+从图中可以看出，梯度下降（蓝色折线）在垂直方向($b$)上振荡较大，在水平方向($W$)上振荡较小，表示在b方向上梯度较大，即 $db$ 较大，而在W方向上梯度较小，即  $dW$ 较小。因此，上述表达式中 $S_b$ 较大，而 $S_W$ 较小。在更新W和b的表达式中，变化值 $\frac{dW}{\sqrt{S_W}}$ 较大，而 $\frac{db}{\sqrt{S_b}}$ 较小。也就使得W变化得多一些，$b$ 变化得少一些。即加快了 $W$ 方向的速度，减小了 $b$ 方向的速度，减小振荡，实现快速梯度下降算法，其梯度下降过程如绿色折线所示。总得来说，就是如果哪个方向振荡大，就减小该方向的更新速度，从而减小振荡。
 
 还有一点需要注意的是为了避免RMSprop算法中分母为零，通常可以在分母增加一个极小的常数 $\varepsilon$ ：
 
@@ -231,9 +231,9 @@ $$\frac{db}{\sqrt{s_{db} + \epsilon}}$$
 
 
 
-## Adam优化算法
+## Adam优化算法(Adam optimization algorithm)
 
-**Adam （Adaptive Moment Estimation）** 优化算法的基本思想就是将 Momentum 和 RMSprop 结合起来形成的一种适用于不同深度学习结构的优化算法，通常有超越二者单独时的效果。具体过程如下（省略了 $l$）：
+**Adam (Adaptive Moment Estimation)** 优化算法的基本思想就是将 Momentum 和 RMSprop 结合起来形成的一种适用于不同深度学习结构的优化算法，通常有超越二者单独时的效果。具体过程如下（省略了 $l$）：
 
 首先进行初始化：
 
@@ -272,7 +272,7 @@ Adam 优化算法有很多的超参数，其中
 
 $β_1$、$β_2$、$ϵ$ 通常不需要调试。
 
-## 学习率衰减
+## 学习率衰减(Learning rate decay)
 
 如果设置一个固定的学习率 $α$，在最小值点附近，由于不同的 batch 中存在一定的噪声，因此不会精确收敛，而是始终在最小值周围一个较大的范围内波动。
 
@@ -301,13 +301,13 @@ $$\alpha = \frac{k}{\sqrt{epoch\\\_num}} * \alpha_0$$
 
 对于较小的模型，也有人会在训练时根据进度手动调小学习率。
 
-## 局部最优问题
+## 局部最优问题(The problem of local optima)
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week2/md_images/09.jpg)
 
 在低维度的情形下，我们可能会想象到一个Cost function 如左图所示，存在一些局部最小值点，在初始化参数的时候，如果初始值选取的不得当，会存在陷入局部最优点的可能性。
 
-但是，如果我们建立一个高维度的神经网络。通常梯度为零的点，并不是如左图中的局部最优点，而是右图中的鞍点（叫鞍点是因为其形状像马鞍的形状）, **鞍点（saddle）** 是函数上的导数为零，但不是轴上局部极值的点。
+但是，如果我们建立一个高维度的神经网络。通常梯度为零的点，并不是如左图中的局部最优点，而是右图中的鞍点（叫鞍点是因为其形状像马鞍的形状）, **鞍点(saddle)** 是函数上的导数为零，但不是轴上局部极值的点。
 
 类似马鞍状的plateaus会降低神经网络学习速度。Plateaus是梯度接近于零的平缓区域，如下图所示。在plateaus上梯度很小，前进缓慢，到达鞍点需要很长时间。到达鞍点后，由于随机扰动，梯度一般能够沿着图中绿色箭头，离开鞍点，继续前进，只是在plateaus上花费了太多时间。
 

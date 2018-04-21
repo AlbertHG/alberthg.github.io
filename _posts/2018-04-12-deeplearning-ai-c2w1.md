@@ -18,7 +18,7 @@ tags:
 
 > 欢迎Star
 
-## 训练、验证、测试集
+## 训练、验证、测试集(Train / Dev / Test sets)
 
 应用深度学习是一个典型的迭代过程。这个循环迭代的过程是这样的：
 
@@ -32,9 +32,9 @@ tags:
 
 对于一个需要解决的问题的样本数据，在建立模型的过程中，数据会被划分为以下几个部分：
 
-* 训练集（train set）：用训练集对算法或模型进行 **训练** 过程；
-* 验证集（development set）：利用验证集（又称为简单交叉验证集，hold-out cross validation set）进行 **交叉验证** ，**选择出最好的模型** ；
-* 测试集（test set）：最后利用测试集对模型进行测试，**获取模型运行的无偏估计** （对学习方法进行评估）。
+* 训练集(train set)：用训练集对算法或模型进行 **训练** 过程；
+* 验证集(development set)：利用验证集（又称为简单交叉验证集，hold-out cross validation set）进行 **交叉验证** ，**选择出最好的模型** ；
+* 测试集(test set)：最后利用测试集对模型进行测试，**获取模型运行的无偏估计** （对学习方法进行评估）。
 
 在 **小数据量** 的时代，如 100、1000、10000 的数据量大小，可以将数据集按照以下比例进行划分：
 
@@ -50,28 +50,28 @@ tags:
 * 100 万数据量：98% / 1% / 1%；
 * 超百万数据量：99.5% / 0.25% / 0.25%（或者99.5% / 0.4% / 0.1%）
 
-### **Tips:**
+#### **Tips:**
 
 - 建议验证集和测试集来自于同一个分布，这样可以使得机器学习算法变得更快；
 - 如果不需要用无偏估计来评估模型的性能，则可以不需要测试集。
 
-### 补充：交叉验证（cross validation）
+#### 补充：交叉验证(cross validation)
 
 交叉验证的基本思想是重复地使用数据；把给定的数据进行切分，将切分的数据集组合为训练集与测试集，在此基础上反复地进行训练、测试以及模型选择。
 
-## 偏差、方差
+## 偏差、方差(Bias /Variance)
 
-偏差（Bias）和方差（Variance）:在传统的机器学习算法中，Bias和Variance是对立的，分别对应着欠拟合和过拟合，常常需要在Bias和Variance之间进行权衡。而在深度学习中，我们可以同时减小Bias和Variance，构建最佳神经网络模型。
+偏差(Bias)和方差(Variance):在传统的机器学习算法中，Bias和Variance是对立的，分别对应着欠拟合和过拟合，常常需要在Bias和Variance之间进行权衡。而在深度学习中，我们可以同时减小Bias和Variance，构建最佳神经网络模型。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/02.jpg)
 
-从图中我们可以看出，在欠拟合（underfitting）的情况下，出现高偏差（high bias）的情况；在过拟合（overfitting）的情况下，出现高方差（high variance）的情况。
+从图中我们可以看出，在欠拟合(underfitting)的情况下，出现高偏差(high bias)的情况；在过拟合(overfitting)的情况下，出现高方差(high variance)的情况。
 
 在偏差-方差权衡的角度来讲，我们利用训练集对模型进行训练就是为了使得模型在训练集上使 偏差最小化，避免出现欠拟合的情况；
 
 但是如果模型设置的太复杂，虽然在训练集上偏差的值非常小，模型甚至可以将所有的数据点正确分类，但是当将训练好的模型应用在开发（验证）集上的时候，却出现了较高的错误率。这是因为模型设置的太复杂则没有排除一些训练集数据中的噪声，使得模型出现过拟合的情况，在开发（验证）集上出现高方差的现象。
 
-“偏差-方差分解”（bias-variance decomposition）是解释学习算法泛化性能的一种重要工具。
+“偏差-方差分解”(bias-variance decomposition)是解释学习算法泛化性能的一种重要工具。
 
 泛化误差可分解为偏差、方差与噪声之和：
 
@@ -87,12 +87,12 @@ tags:
 
 当训练出一个模型以后，如果：
 
-* 训练集的错误率较小（1%），而验证集的错误率却较大（11%），说明模型存在较大方差，可能出现了过拟合，模型泛化能力不强，导致验证集识别率低；
-* 训练集（15%）和开发集（16%）的错误率都较大，且两者相当，说明模型存在较大偏差，可能出现了欠拟合；
-* 训练集错误率较大（15%），且开发集的错误率（30%）远较训练集大，说明方差和偏差都较大，模型很差，这是最糟糕的情况，可以理解成某段区域是欠拟合的，某段区域是过拟合的；
-* 训练集（0.5%）和开发集（1%）的错误率都较小，且两者的相差也较小，说明方差和偏差都较小，这个模型效果比较好。
+* 训练集的错误率较小(1%)，而验证集的错误率却较大(11%)，说明模型存在较大方差，可能出现了过拟合，模型泛化能力不强，导致验证集识别率低；
+* 训练集(15%)和开发集(16%)的错误率都较大，且两者相当，说明模型存在较大偏差，可能出现了欠拟合；
+* 训练集错误率较大(15%)，且开发集的错误率(30%)远较训练集大，说明方差和偏差都较大，模型很差，这是最糟糕的情况，可以理解成某段区域是欠拟合的，某段区域是过拟合的；
+* 训练集(0.5%)和开发集(1%)的错误率都较小，且两者的相差也较小，说明方差和偏差都较小，这个模型效果比较好。
 
-### 应对方法
+#### 应对方法
 
 存在高偏差：
 
@@ -103,14 +103,14 @@ tags:
 存在高方差：
 
 * 获取更多的数据；
-* 正则化（regularization）；
+* 正则化(regularization)；
 * 寻找更合适的网络结构。
 
-## 正则化
+## 正则化(Regularization)
 
-利用正则化（Regularization）来解决高方差（High variance）的问题，正则化是在成本函数（Cost function）中加入一项正则化项，惩罚模型的复杂度。
+利用正则化(Regularization)来解决高方差(High variance)的问题，正则化是在成本函数(Cost function)中加入一项正则化项，惩罚模型的复杂度。
 
-### Logistic回归中的正则化
+#### Logistic回归中的正则化
 
 $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2_2$$
 
@@ -128,7 +128,7 @@ $$\frac{\lambda}{2m}{||w||}_1 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}{|w_j|}$$
 
 **注意** ，`lambda`在 Python 中属于保留字，所以在编程的时候，用`lambd`代替这里的正则化因子。
 
-### 神经网络中的正则化
+#### 神经网络中的正则化
 
 对于神经网络，加入正则化的成本函数：
 
@@ -138,9 +138,9 @@ $$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^
 
 $${ {||w^{[l]}||}}^2_F = \sum^{n^{[l-1]}}_{i=1}\sum^{n^{[l]}}_{j=1}(w^{[l]}_{ij})^2$$
 
-该矩阵范数被称为 **弗罗贝尼乌斯范数（Frobenius Norm）** ，所以神经网络中的正则化项被称为弗罗贝尼乌斯范数矩阵。
+该矩阵范数被称为 **弗罗贝尼乌斯范数(Frobenius Norm)** ，所以神经网络中的正则化项被称为弗罗贝尼乌斯范数矩阵。
 
-### 权重衰减（Weight decay）
+#### 权重衰减(Weight decay)
 
 **在加入正则化项后，梯度变为**（反向传播要按这个计算），它定义含有代价函数的导数和以及添加的正则项：
 
@@ -162,9 +162,9 @@ $$= (1 - \frac{\alpha\lambda}{m})W^{[l]} - \alpha \frac{\partial L}{\partial w^{
 
 $$(1 - \frac{\alpha\lambda}{m})W^{[l]}<1$$
 
-会给原来的 $W^{[l]}$一个衰减的参数。所以 L2 正则化项也被称为 **权重衰减（Weight Decay）**。
+会给原来的 $W^{[l]}$一个衰减的参数。所以 L2 正则化项也被称为 **权重衰减(Weight Decay)**。
 
-## 为什么正则化有利于防止过拟合
+## 为什么正则化有利于防止过拟合(Why regularization reduces overfitting?)
 
 为什么正则化能够有效避免high variance，防止过拟合呢？下面我们通过几个例子说明。
 
@@ -178,7 +178,7 @@ $$(1 - \frac{\alpha\lambda}{m})W^{[l]}<1$$
 
 当然上面这种解释是一种直观上的理解，但是实际上隐藏层的神经元依然存在，但是他们的影响变小了，便不会导致过拟合。
 
-### 数学解释
+#### 数学解释
 
 假设神经元中使用的激活函数为`g(z) = tanh(z)`（sigmoid 同理）。
 
@@ -186,17 +186,17 @@ $$(1 - \frac{\alpha\lambda}{m})W^{[l]}<1$$
 
 在加入正则化项后，当 $λ$ 增大，导致 $W^{[l]}$减小，$Z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]}$便会减小。由上图可知，在 $z$ 较小（接近于 0）的区域里，`tanh(z)`函数近似线性，所以每层的函数就近似线性函数，整个网络就成为一个简单的近似线性的网络，因此不会发生过拟合。
 
-### 其他解释
+#### 其他解释
 
 在权值 $w^{[L]}$变小之下，输入样本 $X$ 随机的变化不会对神经网络模造成过大的影响，神经网络受局部噪音的影响的可能性变小。这就是正则化能够降低模型方差的原因。
 
-## dropout正则化
+## dropout正则化(Dropout Regularization)
 
-**dropout（随机失活）** ：是在神经网络的隐藏层为每个神经元结点设置一个随机消除的概率，保留下来的神经元形成一个结点较少、规模较小的网络用于训练。dropout 正则化较多地被使用在 **计算机视觉（Computer Vision）** 领域。
+**dropout（随机失活）** ：是在神经网络的隐藏层为每个神经元结点设置一个随机消除的概率，保留下来的神经元形成一个结点较少、规模较小的网络用于训练。dropout 正则化较多地被使用在 **计算机视觉(Computer Vision)** 领域。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/07.jpg)
 
-实现Dropout的方法：反向随机失活（Inverted dropout）:
+实现Dropout的方法：反向随机失活(Inverted dropout):
 
 反向随机失活是实现 dropout 的方法。对第`l`层进行 dropout：
 
@@ -215,7 +215,7 @@ al /= keep_prob
 
 **注意** ，在 **测试阶段不要使用 dropout** ，因为那样会使得预测结果变得随机。
 
-## 理解dropout
+## 理解dropout(Understanding Dropout)
 
 对于单个神经元，其工作是接收输入并产生一些有意义的输出。但是加入了 dropout 后，输入的特征都存在被随机清除的可能，所以该神经元不会再特别依赖于任何一个输入特征，即不会给任何一个输入特征设置太大的权重。
 
@@ -227,13 +227,13 @@ dropout 的一大 **缺点** 是成本函数无法被明确定义。因为每次
 
 一般做法是，将所有层的`keep_prob`全设置为 1，再绘制cost function，即涵盖所有神经元，看J是否单调下降。下一次迭代训练时，再将`keep_prob`设置为其它值。
 
-## 其他正则化方法
+## 其他正则化方法(Other regularization methods)
 
-* 数据扩增（Data Augmentation）：通过图片的一些变换（翻转，局部放大后切割等），得到更多的训练集和验证集。
+* 数据扩增(Data Augmentation)：通过图片的一些变换（翻转，局部放大后切割等），得到更多的训练集和验证集。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/08.jpg)
 
-* 早停止法（Early Stopping）：*一个神经网络模型随着迭代训练次数增加，train set error一般是单调减小的，而dev set error 先减小，之后又增大。也就是说训练次数过多时，模型会对训练样本拟合的越来越好，但是对验证集拟合效果逐渐变差，即发生了过拟合。* 因此将训练集和验证集进行梯度下降时的成本变化曲线画在同一个坐标轴内，在两者开始发生较大偏差时及时停止迭代，避免过拟合。这种方法的缺点是无法同时达成偏差和方差的最优。
+* 早停止法(Early Stopping)：*一个神经网络模型随着迭代训练次数增加，train set error一般是单调减小的，而dev set error 先减小，之后又增大。也就是说训练次数过多时，模型会对训练样本拟合的越来越好，但是对验证集拟合效果逐渐变差，即发生了过拟合。* 因此将训练集和验证集进行梯度下降时的成本变化曲线画在同一个坐标轴内，在两者开始发生较大偏差时及时停止迭代，避免过拟合。这种方法的缺点是无法同时达成偏差和方差的最优。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/09.jpg)
 
@@ -241,7 +241,7 @@ dropout 的一大 **缺点** 是成本函数无法被明确定义。因为每次
 
 但是，Early Stopping的做法通过减少得带训练次数来防止过拟合，这样J就不会足够小。也就是说，early Stopping将上述两个目标融合在一起，同时优化，但可能没有“分而治之”的效果好。
 
-## 标准化(归一化)输入
+## 标准化(归一化)输入(Normalizing inputs)
 
 使用标准化处理输入 $X$ 能够有效加速收敛。标准化输入就是对训练数据集进行归一化的操作，即将原始数据减去其均值 $\mu$ 后，再除以其方差 $\sigma^2$ ：
 
@@ -263,7 +263,7 @@ $$\sigma = \sqrt{\frac{1}{m}\sum_{i=1}^{m}x^{ {(i)}^2}}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week1/md_images/11.jpg)
 
-## 梯度消失和梯度爆炸
+## 梯度消失和梯度爆炸(Vanishing / Exploding gradients)
 
 梯度消失和梯度爆炸。意思是当训练一个层数非常多的神经网络时，计算得到的梯度可能非常小或非常大，甚至是指数级别的减小或增大。这样会让训练过程变得非常困难。
 
@@ -277,7 +277,7 @@ $$\hat{Y} = W^{[L]}W^{[L-1]}...W^{[2]}W^{[1]}X$$
 - 如果各层权重 $W^{[l]}$ 的元素都稍大于 1 ，例如 1.5, $W^{[l]}=\left[ \begin{array}{l}1.5 & 0 \\\ 0 & 1.5\end{array} \right]$，则预测输出 $\hat{Y}$ 将正比于 $1.5^{L}$ 。$L$ 越大， $\hat{Y}$ 越大，且呈指数型增长。我们称之为数值爆炸。
 - 相反，如果各层权重 $W^{[l]}$ 的元素都稍小于 1，例如 0.5，$W^{[l]}=\left[ \begin{array}{l}0.5 & 0 \\\ 0 & 0.5\end{array} \right]$ ，则预测输出 $\hat{Y}$ 将正比于 $0.5^{L}$ 。网络层数L越多， $\hat{Y}$ 呈指数型减小。我们称之为数值消失。
 
-## 神经网络的权重初始化
+## 神经网络的权重初始化(Weight Initialization for Deep NetworksVanishing /Exploding gradients)
 
 利用初始化缓解梯度消失和爆炸问题.
 
@@ -301,7 +301,7 @@ $$z={w}_1{x}_1+{w}_2{x}_2 + ... + {w}_n{x}_n + b$$
     ```
 其中$n$是输入的神经元个数，也就是 $n^{[l-1]}$。
 
-## 梯度的数值逼近
+## 梯度的数值逼近(Numerical approximation of gradients)
 
 在实施 backprop 时，有一个测试叫做梯度检验，其目的是检查验证反向传播过程中梯度下降算法是否正确。该小节将先介绍如何近似求出梯度值。
 
@@ -319,11 +319,11 @@ $f'(\theta) = {\lim_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\thet
 
 当 $ε$ 越小时，结果越接近真实的导数，也就是梯度值。可以使用这种方法来判断反向传播进行梯度下降时，是否出现了错误。
 
-## 梯度检验
+## 梯度检验(Gradient checking)
 
 下面用前面一节的方法来进行梯度检验：
 
-### 连接参数
+#### 连接参数
 
 将 $W^{[1]}$，$b^{[1]}$，...，$W^{[L]}$，$b^{[L]}$ 全部连接出来，成为一个巨型向量 $θ$。这样，
 
@@ -357,9 +357,9 @@ $${||x||}_2 = \sum^N_{i=1}{|x_i|}^2$$
 - 如果欧氏距离较大，例如 $10^{-5}$ ，则表明梯度计算可能出现问题，需要再次检查是否有bugs存在。
 - 如果欧氏距离很大，例如 $10^{-3}$ ，甚至更大，则表明 $d\theta_{approx}$ 与 $d\theta$ 差别很大，梯度下降计算过程有bugs，需要仔细检查。
 
-## 梯度验证应用的注意事项
+## 梯度验证应用的注意事项(Gradient Checking Implementation Notes)
 
-1. 不要在训练中使用梯度检验，它只用于调试（debug）,因为时间代价比较大。
+1. 不要在训练中使用梯度检验，它只用于调试(debug),因为时间代价比较大。
 2. 如果算法的梯度检验失败，要检查所有项，并试着找出 bug，即确定哪个 $dθapprox[i]$ 与 $dθ$ 的值相差比较大；
 3. 当成本函数包含正则项时，也需要带上正则项进行检验；
 4. 梯度检验不能与 dropout 同时使用。因为每次迭代过程中，dropout 会随机消除隐藏层单元的不同子集，难以计算 dropout 在梯度下降上的成本函数 $J$。建议关闭 dropout，用梯度检验进行双重检查，确定在没有 dropout 的情况下算法正确，然后打开 dropout；
