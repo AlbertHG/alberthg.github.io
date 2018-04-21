@@ -92,7 +92,7 @@ $||f(x^{(1)})-f(x^{(2)})||^2$
 
 如何通过学习神经网络的参数，得到优质的人脸图片的编码？方法之一就是定义 Triplet 损失函数，并在其之上运用梯度下降。
 
-### 学习目标 ：
+### 1. 学习目标 ：
 
 为了使用Triplet 损失函数，我们需要比较成对的图像（三元组术语），Triplet Loss需要每个样本包含三张图片：靶目标（Anchor）、正例（Positive）、反例（Negative）：
 
@@ -120,7 +120,7 @@ $$||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} ⩽ - \alpha$$
 
 $$||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} + \alpha ⩽ 0$$
 
-### 定义Triplet 损失函数：
+### 2. 定义Triplet 损失函数：
 
 Triplet 损失函数的定义基于三张图片：Anchor、Positive、Negative。
 
@@ -132,7 +132,7 @@ $||f(A) - f(P)||^{2} - ||f(A) - f(N)||^{2} + \alpha ⩽ 0$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/04-Convolutional%20Neural%20Networks/week4/md_images/04.png)
 
-### cost function为：
+### 3. cost function为：
 
 相应地，对于$m$组训练样本，cost function为：
 
@@ -140,7 +140,7 @@ $$J=\sum_{i=1}^mL(A^{(i)},P^{(i)},N^{(i)})$$
 
 关于训练样本，必须保证同一人包含多张照片，否则无法使用这种方法。例如10k张照片包含1k个不同的人脸，则平均一个人包含10张照片。这个训练样本是满足要求的。
 
-### 三元组$(A,P,N)$的选择:
+### 4. 三元组$(A,P,N)$的选择:
 
 在训练的过程中，如果我们随机地选择图片构成三元组$(A,P,N)$，那么对于下面的条件是很容易满足的：
 
