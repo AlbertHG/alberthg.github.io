@@ -4,7 +4,7 @@ title:      Translated "Machine Learning Yearning"
 subtitle:   《Machine Learning Yearning》 翻译文稿
 date:       2018-04-22
 author:     ATuk
-header-img: img/xxx.jpg
+header-img: img/ML_yearning.jpg
 catalog: true
 tags:
     - maching learning
@@ -93,6 +93,6 @@ tags:
 
 很多其他的细节，比如神经网络架构，也是非常重要的，这里边也有很多可以创新的地方。但，在今天来看，提高算法性能更有效的方法依然是：(i)规模更大的网络；(ii)更多的数据。
 
-如何实现(i)和(ii)的过程非常复杂，本书将会详细讨论这些细节。我们将从对传统的学习算法和神经网络都有效的一般策略入手，为构建现代深度学习系统提供更加现代化的策略。
+如何实现(i)和(ii)的过程非常复杂，本书将会详细讨论这些细节。我们将从对传统的学习算法和神经网络都有效的一般策略入手，为构建现代深度学习系统提出更加现代化的策略。
 
 🚧🚧未完待续！（施工中）🚧🚧
