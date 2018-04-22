@@ -45,7 +45,11 @@ tags:
 - $T_{y}$：用来表示输出 $y$ 的长度；
 - $x^{(i)⟨t⟩}$：表示第 $i$ 个输入样本的第 $t$ 个符号，其余同理。
 
-想要表示一个词语，需要先建立一个 **词汇表(Vocabulary)** ，或者叫 **字典(ictionary)** 。将需要表示的所有词语变为一个列向量，可以根据字母顺序排列，然后根据单词在向量中的位置，用 **one-hot 向量(one-hot vector)** 来表示该单词的标签：将每个单词编码成一个 $R^{\left | V \right | \times 1}$向量，其中 $\left | V \right |$是词汇表中单词的数量。一个单词在词汇表中的索引在该向量对应的元素为 1，其余元素均为 0。
+想要表示一个词语，需要先建立一个 **词汇表(Vocabulary)** ，或者叫 **字典(ictionary)** 。将需要表示的所有词语变为一个列向量，可以根据字母顺序排列，然后根据单词在向量中的位置，用 **one-hot 向量(one-hot vector)** 来表示该单词的标签：将每个单词编码成一个
+$R^{\left | V \right | \times 1}$ 
+向量，其中 
+$\left | V \right |$ 
+是词汇表中单词的数量。一个单词在词汇表中的索引在该向量对应的元素为 1，其余元素均为 0。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/05-Sequence%20Models/week1/md_images/02.png)
 
