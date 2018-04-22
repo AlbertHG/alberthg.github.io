@@ -2,9 +2,9 @@
 layout:     post
 title:      循环神经网络
 subtitle:    "\"deeplearning.ai-Class5-Week1\""
-date:       2018-04-12
+date:       2018-04-22
 author:     ATuk
-header-img: img/deeplearning_c1_w1.jpg
+header-img: img/deeplearning_c5_w1.jpg
 catalog: true
 tags:
     - deep learning
@@ -206,7 +206,7 @@ $$L(\hat y^{⟨t⟩}, y^{⟨t⟩}) = -\sum_t y_i^{⟨t⟩} log \hat y^{⟨t⟩}$
 
 $$J = \sum_t L^{⟨t⟩}(\hat y^{⟨t⟩}, y^{⟨t⟩})$$
 
-如果你用很大的训练集来训练这个RNN，你就可以通过开头一系列单词像是Cars average 15或者Cars average 15 hours of来预测之后单词的概率。现在有一个新句子（假设只有三个单词），他们是$y^{⟨1⟩}$，$y^{⟨2⟩}$，$y^{⟨3⟩}$，为了计算出这个歌句子中各个单词的概率，方法就是：
+如果你用很大的训练集来训练这个RNN，你就可以通过开头一系列单词像是Cars average 15或者Cars average 15 hours of来预测之后单词的概率。现在有一个新句子（假设只有三个单词），他们是$y^{⟨1⟩}$，$y^{⟨2⟩}$，$y^{⟨3⟩}$，为了计算出这个句子中各个单词的概率，方法就是：
 
 - 第一个softmax层会告诉你$y^{⟨1⟩}$的概率，这也是第一个输出；
 - 然后第二个softmax层会告诉你在考虑$y^{⟨1⟩}$的情况下$y^{⟨2⟩}$的概率；
