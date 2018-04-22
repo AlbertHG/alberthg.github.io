@@ -19,7 +19,7 @@ tags:
 > 欢迎Star
 
 
-## 为什么选择序列模型？
+## 为什么选择序列模型？(Why Sequence Models?)
 
 自然语言和音频都是前后相互关联的数据，对于这些序列数据需要使用 **循环神经网络(Recurrent Neural Network，RNN)** 来进行处理。
 
@@ -35,7 +35,7 @@ tags:
 
 所以这些问题都可以被称作使用标签数据$(X,Y)$作为训练集的监督学习。但从这一系列例子中可以看出序列问题有很多不同类型。有些问题里，输入数据$X$和输出数据$Y$都是序列，但就算在那种情况下，$X$，$Y$和有时也会不一样长。或者像上图编号1所示和上图编号2的$X$和$Y$有相同的数据长度。在另一些问题里，只有$X$或者只有$Y$是序列。
 
-## 数学符号
+## 数学符号(Notation)
 
 在对具体模型知识展开叙述之前，先对将要用到的数学符号进行定义。
 
@@ -58,7 +58,7 @@ $\left | V \right |$
 3. 以此类推。
 4. 那么还剩下最后一件事，如果遇到了一个不在词表中的单词，答案就是创建一个新的标记，也就是一个叫做Unknow Word的伪造单词，用$UNK$作为标记。
 
-## 循环神经网络模型
+## 循环神经网络模型(Recurrent Neural Network Model)
 
 假设句子："Harry Potter and Herminone Granger invented a new spell."。有9个输入单词。想象一下，把这9个输入单词，可能是9个one-hot向量，然后将它们输入到一个标准神经网络中，经过一些隐藏层，最终会输出9个值为0或1的项，它表明每个输入单词是否是人名的一部分。
 
@@ -135,7 +135,7 @@ $$\hat y^{⟨t⟩} = g_2(W_{y}a^{⟨t⟩} + b_y)$$
 - 若用递归网络：网络训练过程相当于在不断旋转的转盘上，以一种手势捏造所有角度。工作量降低，效果也可保证。
 
 
-## 穿越时间的反向传播
+## 穿越时间的反向传播(Backpropagation through time)
 
 先来简要用语言回顾以下前向传播的过程：
 
@@ -161,7 +161,7 @@ $$J = L(\hat y, y) = \sum^{T_x}_ {t=1} L^{⟨t⟩}(\hat y^{⟨t⟩}, y^{⟨t⟩}
 
 循环神经网络的反向传播被称为通过时间反向传播(Backpropagation through time)，因为从右向左计算的过程就像是时间倒流。
 
-## 不同类型的循环神经网络
+## 不同类型的循环神经网络(Different types of RNNs)
 
 对于RNN，不同的问题需要不同的输入输出结构。
 
@@ -172,7 +172,7 @@ $$J = L(\hat y, y) = \sum^{T_x}_ {t=1} L^{⟨t⟩}(\hat y^{⟨t⟩}, y^{⟨t⟩}
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/05-Sequence%20Models/week1/md_images/06.png)
 
-## 语言模型和序列生成
+## 语言模型和序列生成(Language model and sequence generation)
 
 在自然语言处理中，构建语言模型是最基础的也是最重要的工作之一，并且能用RNN很好地实现。那什么是语言模型？
 
@@ -217,7 +217,7 @@ $$J = \sum_t L^{⟨t⟩}(\hat y^{⟨t⟩}, y^{⟨t⟩})$$
 - 然后第三个softmax层告诉你在考虑$y^{⟨1⟩}$和$y^{⟨2⟩}$的情况下$y^{⟨3⟩}$的概率;
 - 把这三个概率相乘，最后得到这个含3个词的整个句子的概率。
 
-## 对新序列采样
+## 对新序列采样(Sampling novel sequences)
 
 在训练一个序列模型之后，要想了解到这个模型学到了什么，一种非正式的方法就是进行一次新序列采样。
 
@@ -229,7 +229,7 @@ $$J = \sum_t L^{⟨t⟩}(\hat y^{⟨t⟩}, y^{⟨t⟩})$$
 
 就好像在训练的时候，喂给网络大量莎士比亚写出来的句子，网络在经过学习之后，我们就可以利用网络来随机生成句子，而这些句子是具有莎士比亚风格的句子。
 
-## 循环神经网络的梯度消失
+## 循环神经网络的梯度消失(Vanishing gradients with RNNs)
 
 基本的RNN算法还有一个很大的问题，就是梯度消失的问题。
 
@@ -241,7 +241,7 @@ $$The\ cats, which\ already\ ate\ a\ bunch\ of\ food,\ were\ full.$$
 
 虽然梯度爆炸在RNN中也会出现，但对于梯度爆炸问题，因为参数会指数级的梯度，会让我们的网络参数变得很大，得到很多的Nan或者数值溢出，所以梯度爆炸是很容易发现的，解决方法就是用梯度修剪(gradient clipping)，也就是观察梯度向量，如果其大于某个阈值，则对其进行缩放，保证它不会太大。
 
-## GRU单元
+## GRU单元(Gated Recurrent Unit(GRU))
 
 在本节中将会介绍门控循环单元，它改变了RNN的隐藏层，使其可以更好地捕捉深层连接，并改善了梯度消失问题。
 
@@ -292,7 +292,7 @@ $$a^{⟨t⟩} = c^{⟨t⟩}$$
 1. [Cho et al., 2014. On the properties of neural machine translation: Encoder-decoder approaches](https://arxiv.org/pdf/1409.1259.pdf)
 2. [Chung et al., 2014. Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](https://arxiv.org/pdf/1412.3555.pdf)
 
-## 长短期记忆(LSTM)
+## 长短期记忆(LSTM)(LSTM(long short term memory)unit)
 
 **LSTM（Long Short Term Memory，长短期记忆）** 网络比 GRU 更加灵活和强大，它额外引入了 **遗忘门(Forget Gate)**  $Γ_f$和 **输出门(Output Gate)** $Γ_o$。公式如下：
 
@@ -304,7 +304,7 @@ $$Γ_f = \sigma(W_f[a^{⟨t-1⟩}, x^{⟨t⟩}] + b_f)$$
 
 $$Γ_o = \sigma(W_o[a^{⟨t-1⟩}, x^{⟨t⟩}] + b_o)$$
 
-$$c^{⟨t⟩} = Γ^{⟨t⟩}_u \times \tilde c^{⟨t⟩} + Γ^{⟨t⟩}_f \times c^{⟨t-1⟩}$$
+$$c^{⟨t⟩} = Γ^{⟨t⟩}_ u \times \tilde c^{⟨t⟩} + Γ^{⟨t⟩}_ f \times c^{⟨t-1⟩}$$
 
 $$a^{⟨t⟩} = Γ_o^{⟨t⟩} \times tanh(c^{⟨t⟩})$$
 
@@ -326,13 +326,13 @@ $$Γ_f = \sigma(W_f[a^{⟨t-1⟩}, x^{⟨t⟩}, c^{⟨t-1⟩}] + b_f)$$
 
 $$Γ_o = \sigma(W_o[a^{⟨t-1⟩}, x^{⟨t⟩},c^{⟨t-1⟩}] + b_o)$$
 
-$$c^{⟨t⟩} = Γ^{⟨t⟩}_u \times \tilde c^{⟨t⟩} + Γ^{⟨t⟩}_f \times c^{⟨t-1⟩}$$
+$$c^{⟨t⟩} = Γ^{⟨t⟩}_ u \times \tilde c^{⟨t⟩} + Γ^{⟨t⟩}_ f \times c^{⟨t-1⟩}$$
 
 $$a^{⟨t⟩} = Γ_o^{⟨t⟩} \times tanh(c^{⟨t⟩})$$
 
 相关论文：[Hochreiter & Schmidhuber 1997. Long short-term memory](https://www.researchgate.net/publication/13853244_Long_Short-term_Memory)
 
-## 双向循环神经网络
+## 双向循环神经网络(Bidirectional RNN)
 
 单向的循环神经网络在某一时刻的预测结果只能使用之前输入的序列信息。**双向循环神经网络(Bidirectional RNN，BRNN)** 可以在序列的任意位置使用之前和之后的数据。其工作原理是增加一个反向循环层，结构如下图所示：
 
@@ -345,7 +345,7 @@ $$\hat y^{⟨t⟩}=g(W_{y}[a^{\rightarrow ⟨t⟩},a^{\leftarrow ⟨t⟩}]+b_y)$
 
 这就是双向循环神经网络，并且这些基本单元不仅仅是标准RNN单元，也可以是GRU单元或者LSTM单元。事实上，很多的NLP问题，对于大量有自然语言处理问题的文本，有LSTM单元的双向RNN模型是用的最多的。所以如果有NLP问题，并且文本句子都是完整的，首先需要标定这些句子，一个有LSTM单元的双向RNN模型，有前向和反向过程是一个不错的首选。
 
-## 深层循环神经网络
+## 深层循环神经网络(Deep RNNs)
 
 循环神经网络的每个时间步上也可以包含多个隐藏层，形成深度循环神经网络(Deep RNN)。结构如下图所示：
 
