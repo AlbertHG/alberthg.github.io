@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Machine Learning Yearning" Chapter 1
+title:      "Machine Learning Yearning:Chapter 1"
 subtitle:   《Machine Learning Yearning》翻译之“绪论”
 date:       2018-04-22
 author:     ATuk
