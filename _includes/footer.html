@@ -225,13 +225,6 @@
 {% if page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
-        // interop with multilangual 
-        if ({{ page.multilingual }}) {
-            _containerSelector = 'div.post-container.active'
-        } else {
-            _containerSelector = 'div.post-container'
-        }
-
         var P = $('div.post-container'),a,n,t,l,i,c;
         a = P.find('h1,h2,h3,h4,h5,h6');
         a.each(function () {
