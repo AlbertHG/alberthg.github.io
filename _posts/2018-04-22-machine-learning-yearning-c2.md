@@ -167,7 +167,7 @@ $$Accuracy-0.5 \times RunningTime$$
 
 假设你的厨师开发/训练集大部分都是成年的猫。这时，你检查你的猫分类App发现用户比预期上传了更多小猫咪的图片。这个情况下，开发/测试集的分布就不能很好的代表真实数据的分布了，此时应该做的事，更新你的开发/训练集使其更具代表性。
 
-    ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/5.jpg)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/5.jpg)
 
 2. *你过拟合了开发集。*
 
