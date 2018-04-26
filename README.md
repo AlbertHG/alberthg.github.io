@@ -215,7 +215,7 @@ ga_domain: auto			# 默认的是 auto
 
 ## 文章内容添加知识共享声明
 
-在`_layouts/post.html`的{{content}}下方添加以下信息：
+在`_layouts/post.html`的`{{content}}`下方添加以下信息：
 
 ```html
 <blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none">
