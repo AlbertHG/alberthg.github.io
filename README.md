@@ -20,7 +20,9 @@
 	* [自定义](#customization)
 	* [标题底图](#header-image)
 	* [搜索展示标题-头文件](#seo-title)
-
+* [知识共享声明](#文章内容添加知识共享声明)
+* [致谢](#致谢)
+* [License](#License)
 ### 开始
 
 通过修改 `_config.yml`文件来自定义自己的博客:
@@ -170,14 +172,14 @@ ga_domain: auto			# 默认的是 auto
 在`_include/head.html`文件下添加：
 
 ```html
-<!-- 直接引入MathJax，使用Tex-MML-AM_HTLMorMML配置文件 
+<!-- 直接引入MathJax，使用Tex-MML-AM_HTLMorMML配置文件
     1. 整行公式自动编号；
     2. 将两个单美元符号$中间的内容看作行内数学公式（若文本内容中美元符号出现频率较高，建议禁用这一脚本）
     3. 从mathjax官网挂载脚本。
     -->
-    
-    <script type="text/x-mathjax-config"> 
-        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); 
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
     </script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {
@@ -186,7 +188,7 @@ ga_domain: auto			# 默认的是 auto
            }
          });
     </script>
-    
+
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
     </script>
 ```
@@ -211,6 +213,22 @@ ga_domain: auto			# 默认的是 auto
 
  SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西，可以自行修改的。
 
+## 文章内容添加知识共享声明
+
+在`_layouts/post.html`的{{content}}下方添加以下信息：
+
+```html
+<blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none">
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+		<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+	</a>
+	本作品采用
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+		知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议
+	</a>进行许可。欢迎转载，并请注明来自：<a href="https://alberthg.github.io/">黄钢的博客</a>
+	同时保持文章内容的完整和以上声明信息！
+</blockquote>
+```
 
 ## 致谢
 
