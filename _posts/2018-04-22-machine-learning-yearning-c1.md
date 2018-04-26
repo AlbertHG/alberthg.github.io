@@ -9,7 +9,6 @@ catalog: true
 tags:
     - maching learning yearning
     - 机器学习
-    - 策略
     - Andrew NG
     - 翻译
 ---
