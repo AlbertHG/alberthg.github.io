@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Machine Learning Yearning:Chapter 2"
-subtitle:   《Machine Learning Yearning》翻译之“配置开发集和训练集”
+title:      《向往机器学习》——“配置开发集和训练集”
+subtitle:   Translated "Machine Learning Yearning"-Setting up development and test sets
 date:       2018-04-23
 author:     ATuk
 header-img: img/ML_yearning1.jpg
@@ -58,7 +58,7 @@ tags:
 
 根据你的App的受众地区，将猫咪数据来源分为四个区域：(i)美国、(ii)中国，(iii)印度和(iv)其他。我们提出了一个服从这样分布(Distribution)的开发集和测试集：将美国和印度地区的数据归入开发集中，将来自中国和其他地区的数据归入测试集中。简单说就是，我们随机将两个地区的数据分配给开发集，另外两个分配给测试集。这种分法对吗？
 
-错啦！！！
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/9.jpg)
 
 一旦定义好开发集和测试集，你的团队将会专注于提高开发集上的表现。所以，开发集应该要反映出你最想要改进的任务——在四个区域都表现良好，而不是其中的两个。
 
