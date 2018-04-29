@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      《向往机器学习》——“绪论”
+title:      《向往机器学习》 “绪论”
 subtitle:   Translated "Machine Learning Yearning"-Chapter 1:Introduction
 date:       2018-04-22
 author:     ATuk
