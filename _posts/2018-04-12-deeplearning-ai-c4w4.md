@@ -302,7 +302,7 @@ $$J_{style}^{[l]}(S, G) = \dfrac{1}{2n_{h}^{[l]}n_{w}^{[l]}n_{c}^{[l]}}||G^{[l] 
 
 值得一提的是，以上我们只比较计算了一层隐藏层 $l$ 。为了提取的“风格”更多，也可以使用多层隐藏层，然后相加，表达式为：
 
-$$J_{style}(S,G)=\sum_l\lambda^{[l]}\cdot J^{[l]}\_{style}(S,G)$$
+$$J_{style}(S,G)=\sum_l\lambda^{[l]}\cdot J^{[l]}_{style}(S,G)$$
 
 其中， $\lambda^{[l]}$ 表示累加过程中各层 $J^{[l]}\_{style}(S,G)$ 的权重系数，为超参数。
 
