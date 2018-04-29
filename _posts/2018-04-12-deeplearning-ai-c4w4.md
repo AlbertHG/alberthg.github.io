@@ -337,3 +337,4 @@ $$J(G)=\alpha \cdot J_{content}(C,G)+\beta \cdot J_{style}(S,G)$$
 - 输入3D图片维度：14 x 14 x 14 x 1
 - 滤波器尺寸：5 x 5 x 5 x 1，滤波器个数：16
 - 输出3D图片维度：10 x 10 x 10 x 16
+
