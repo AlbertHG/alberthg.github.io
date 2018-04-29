@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      《机器学习要领》 “绪论”
-subtitle:   Translated "Machine Learning Yearning"-Chapter 1:Introduction
+title:      《机器学习要领》 绪论（中文翻译版）
+subtitle:   Machine Learning Yearning Chapter1 Introduction(Chinese ver)
 date:       2018-04-22
 author:     ATuk
 header-img: img/ML_yearning1.jpg
