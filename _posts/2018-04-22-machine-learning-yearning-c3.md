@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      《向往机器学习》——“基本误差分析”
-subtitle:   Translated "Machine Learning Yearning"-Basic Error Analysis
+title:      《向往机器学习》 “基本误差分析”
+subtitle:   Translated "Machine Learning Yearning"-Chapter 3:Basic Error Analysis
 date:       2018-04-26
 author:     ATuk
 header-img: img/ML_yearning1.jpg
@@ -200,3 +200,5 @@ tags:
 - 考虑将开发集分割成眼球开发集（手动检查）和黑盒开发集（不手动检查）。如果算法在眼球开发集的表现比黑盒开发集的表现好的多，那么说明你已经过拟合了眼球开发集，此时应考虑为眼球开发集获取更多的数据。
 - 眼球开发集应该足够大以便你的算法能提供足够的误分类样本供你分析。对于很多应用程序来说，1000-10000个样本大小的黑盒开发集足够了；
 - 如果你的开发集不够大，将无法按照这种方式拆分，此时只需将整个开发集当作眼球开发集进行手动错误分析、模型选择和参数调优。
+
+----

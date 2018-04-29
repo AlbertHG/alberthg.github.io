@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      《向往机器学习》——“配置开发集和训练集”
-subtitle:   Translated "Machine Learning Yearning"-Setting up development and test sets
+title:      《向往机器学习》 “配置开发集和训练集”
+subtitle:   Translated "Machine Learning Yearning"-Chapter 2:Setting up development and test sets
 date:       2018-04-23
 author:     ATuk
 header-img: img/ML_yearning1.jpg

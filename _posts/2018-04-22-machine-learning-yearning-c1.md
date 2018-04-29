@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      《向往机器学习》——“绪论”
-subtitle:   Translated "Machine Learning Yearning"-Introduction
+subtitle:   Translated "Machine Learning Yearning"-Chapter 1:Introduction
 date:       2018-04-22
 author:     ATuk
 header-img: img/ML_yearning1.jpg
@@ -96,3 +96,5 @@ Out)）。这意味着，即使提供再多的数据，算法也会停止改进�
 很多其他的细节，比如神经网络架构，也是非常重要的，这里边也有很多可以创新的地方。但，在今天来看，提高算法性能更有效的方法依然是：(i)规模更大的网络；(ii)更多的数据。
 
 如何实现(i)和(ii)的过程非常复杂，本书将会详细讨论这些细节。我们将从对传统的学习算法和神经网络都有效的一般策略入手，为构建现代深度学习系统提出更加现代化的策略。
+
+----
