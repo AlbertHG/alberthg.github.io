@@ -7,10 +7,8 @@ author:     ATuk
 header-img: img/dataset.jpg
 catalog: true
 tags:
-    - dataset
     - 数据集
     - 简介
-    - 人脸数据库
 ---
 
 ## 前言

@@ -10,12 +10,11 @@ tags:
     - caffe
     - win10
     - python3
-    - python
     - matlab
     - windows
     - cmake
     - vs2015
-    - 教程
+    - 记录
     - 环境搭建
 ---
 

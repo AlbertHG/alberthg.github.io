@@ -7,11 +7,11 @@ author:     ATuk
 header-img: img/deeplearning_c4_w3.jpg
 catalog: true
 tags:
-    - deep learning
+    - 深度学习
     - 笔记
     - deeplearning.ai
     - 网易云课堂
-    - 编程作业
+    - Andrew NG
 ---
 
 ## [GitHub项目传送门](https://github.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai)
