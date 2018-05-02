@@ -74,8 +74,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Baidu",
-        href: "https://www.baidu.com"
+        title: "TenzT's Blog",
+        href: "https://tenzt.github.io/"
     },{
         title: "Google",
         href: "https://www.google.com"
