@@ -80,11 +80,8 @@ $$z_1^{[2]}=w_1^{[2]T}a^{[1]}+b_1^{[2]},\ a_1^{[2]}=\sigma(z_1^{[2]})$$
 为了提高程序运算速度，我们引入向量化和矩阵运算的思想，将上述表达式转换成矩阵运算的形式：
 
 $$z^{[1]}=W^{[1]}x+b^{[1]}$$
-
 $$a^{[1]}=\sigma(z^{[1]}) $$
-
 $$z^{[2]}=W^{[2]}a^{[1]}+b^{[2]}$$
-
 $$a^{[2]}=\sigma(z^{[2]})$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/01-Neural%20Networks%20and%20Deep%20Learning/week3/md_images/04.jpg)
