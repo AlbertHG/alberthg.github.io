@@ -123,6 +123,4 @@ tags:
 
 ---
 
-
-![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/1.png)
 🚧🚧🚧未完待续！🚧🚧🚧
