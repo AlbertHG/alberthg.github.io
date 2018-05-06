@@ -13,7 +13,9 @@ tags:
 
 ## 前言
 
-> GAN的鼻祖之作是2014年NIPS一篇文章：[Generative Adversarial Nets](https://arxiv.org/abs/1406.2661)，这篇博客是对GAN同时进行了直观的解释和数学推导，有些内容来自台湾大学李宏毅老师的线上资源：[李宏毅机器学习](http://speech.ee.ntu.edu.tw/~tlkagk/index.html)
+> GAN的开山之作是2014年NIPS一篇文章：[Generative Adversarial Nets](https://arxiv.org/abs/1406.2661)，这篇博客是对GAN同时进行了直观的解释和数学推导，有些内容来自台湾大学李宏毅老师的线上资源：[李宏毅机器学习](http://speech.ee.ntu.edu.tw/~tlkagk/index.html)
+
+*本篇博客有大量公式演示，不推荐使用手机查看*
 
 ## GAN的基本思想
 
@@ -200,7 +202,8 @@ $$D^{* } = \frac{P_{data}(x)}{P_{data}(x)+P_G(x)}$$
 
 $$
 \begin{align}
-\underset{D}{max}\ V(G,D) &= V(G,D^{* })\\
+& \underset{D}{max}\ V(G,D) \\
+& = V(G,D^{* })\\
 & = E_{x \sim P_{data} } \left [\ log\ D^{* }(x) \ \right ] + E_{x \sim P_{G} } \left [\ log\ (1-D^{* }(x)) \ \right ] \\
 & = E_{x \sim P_{data} } \left [\ log\ \frac{P_{data}(x)}{P_{data}(x)+P_G(x)} \ \right ] + E_{x \sim P_{G} } \left [\ log\ \frac{P_{G}(x)}{P_{data}(x)+P_G(x)} \ \right ]\\
 & = \int_{x} P_{data}(x) log \frac{P_{data}(x)}{P_{data}(x)+P_G(x)} dx+ \int_{x} P_G(x)log(\frac{P_{G}(x)}{P_{data}(x)+P_G(x)})dx \\
