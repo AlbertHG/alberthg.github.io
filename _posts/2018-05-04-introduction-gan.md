@@ -13,7 +13,7 @@ tags:
 
 ## 前言
 
-> GAN的鼻祖之作是2014年NIPS一篇文章：[Generative Adversarial Nets](https://arxiv.org/abs/1406.2661)，这篇博客是对GAN同时进行了直观的解释和数学推导，有些内容来自台湾大学李宏毅老师的线上资源：[李宏毅深度学习2017](http://speech.ee.ntu.edu.tw/~tlkagk/index.html)
+> GAN的鼻祖之作是2014年NIPS一篇文章：[Generative Adversarial Nets](https://arxiv.org/abs/1406.2661)，这篇博客是对GAN同时进行了直观的解释和数学推导，有些内容来自台湾大学李宏毅老师的线上资源：[李宏毅机器学习](http://speech.ee.ntu.edu.tw/~tlkagk/index.html)
 
 ## GAN的基本思想
 
