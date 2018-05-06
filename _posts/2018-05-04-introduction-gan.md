@@ -91,17 +91,17 @@ $$θ_{ML} = \underset{θ}{arg\ max}\ E_{x\sim \hat p_{data} }\ log\  p_{model}(x
 
 #### KL散度
 
-一种解释最大似然估计的观点就是将它看作是最小化训练集上的经验分布 $\hat{p}_{data}$ 和模型分布 $p_{model}(x;θ)$ 之间的差异，两者之间的差异程度就可用KL散度来度量。KL散度(Kullback–Leibler divergence)被定义为：
+一种解释最大似然估计的观点就是将它看作是最小化训练集上的经验分布 $\hat p_{data}$ 和模型分布 $p_{model}(x;θ)$ 之间的差异，两者之间的差异程度就可用KL散度来度量。KL散度(Kullback–Leibler divergence)被定义为：
 
-$$D_{KL}(\hat{p}_{data}||p_{model}) = E_{x\sim \hat{p}_{data} }[log\ \hat{p}_{data}(x)-log\ p_{model}(x)]$$
+$$D_{KL}(\hat p_{data}||p_{model}) = E_{x\sim \hat p_{data} }[log\ \hat p_{data}(x)-log\ p_{model}(x)]$$
 
 左边一项仅涉及到数据的原始分布，和模型无关。这意味着当训练模型最小化KL散度的时候，我们只需要最小化：
 
-$$-E_{x\sim \hat{p}_{data} }[log\ p_{model}(x)]$$
+$$-E_{x\sim \hat p_{data} }[log\ p_{model}(x)]$$
 
 额外提一下，它是非对称的，也就是说:
 
-$$D_{KL}(\hat{p}_{data}||p_{model})\neq D_{KL}(p_{model}||\hat{p}_{data})$$
+$$D_{KL}(\hat p_{data}||p_{model})\neq D_{KL}(p_{model}||\hat p_{data})$$
 
 结合上边对最大似然的解释，开始推导 $θ_{ML}$ :
 
@@ -120,26 +120,26 @@ $$
 简述上边的推导：
 
 - 第1行照抄，不赘述；
-- 第二行就是直接加上 $log$ 用来方便后边的运算，连乘变成连加；
-- 第3行就是除以 $m$ 得到和训练数据 $X$ 的经验分布 $\hat{p}_{data}$ 相关的期望；
+- 第2行就是直接加上 $log$ 用来方便后边的运算，连乘变成连加；
+- 第3行就是除以 $m$ 得到和训练数据 $X$ 的经验分布 $\hat p_{data}$ 相关的期望；
 - 第4行就是把期望展开，后边减去的那一项是为了后边变形为KL散度做准备，这一项不会影响到 $θ_{ML}$ 的取值；
 - 后边的就是简单的变形而已。
 
-最小化KL散度其实就是在最小化分布之间的交叉熵，任何一个由负对数似然组成的损失都是定义在训练集 $X$ 上的经验分布 $\hat{p}_{data}$ 和定义在模型上的概率分布 $p_{model}$ 之间的交叉熵。例如，均方误差就是定义在经验分布和高斯模型之间的交叉熵。
+最小化KL散度其实就是在最小化分布之间的交叉熵，任何一个由负对数似然组成的损失都是定义在训练集 $X$ 上的经验分布 $\hat p_{data}$ 和定义在模型上的概率分布 $p_{model}$ 之间的交叉熵。例如，均方误差就是定义在经验分布和高斯模型之间的交叉熵。
 
-我们可以将最大似然看作是使模型分布 $p_{model}$ 尽可能地与经验分布 $\hat{p}_{data}$ 相匹配的尝试。理想情况下，我们希望模型分布能够匹配真实地数据生成分布 $p_{data}$ ，但我们无法直接指导这个分布（无穷）。
+我们可以将最大似然看作是使模型分布 $p_{model}$ 尽可能地与经验分布 $\hat p_{data}$ 相匹配的尝试。理想情况下，我们希望模型分布能够匹配真实地数据生成分布 $p_{data}$ ，但我们无法直接指导这个分布（无穷）。
 
 虽然最优 $θ$ 在最大化似然和最小化KL散度的时候是相同的，在编程中，我们通常将两者都成为最小化代价函数。因此最大化似然变成了最小化负对数似然(NLL)，或者等价的是最小化交叉熵。
 
 #### JS散度
 
-JS散度(Jensen-Shannon divergence)度量了两个概率分布的相似度，基于KL散度的变体，解决了KL散度非对称的问题。一般地，JS散度是对称的，其取值是0到1之间。定义如下：
+JS散度(Jensen-Shannon divergence)度量了两个概率分布的相似度，基于KL散度的变体，解决了KL散度非对称的问题。一般地，JS散度是对称的，其取值是 0 到 1 之间。定义如下：
 
 $$JS(P||Q) = \frac{1}{2}KL(P||\frac{P+Q}{2})+\frac{1}{2}KL(Q||\frac{P+Q}{2})$$
 
 在后边推导GAN代价函数的时候会用到，现摆在这里。
 
-KL散度和JS散度度量的时候有一个问题：如果两个分布离得很远，完全没有重叠的时候，那么KL散度值是没有意义的，而JS散度值是一个常数。这在学习算法中是比较致命的，这就意味这这一点的梯度为0。梯度消失了。
+KL散度和JS散度度量的时候有一个问题：如果两个分布离得很远，完全没有重叠的时候，那么KL散度值是没有意义的，而JS散度值是一个常数。这在学习算法中是比较致命的，这就意味这这一点的梯度为 0。梯度消失了。
 
 ## GAN算法推导
 
@@ -156,19 +156,19 @@ KL散度和JS散度度量的时候有一个问题：如果两个分布离得很�
 
 $$V = E_{x \sim P_{data} } \left [\ log\ D(x) \ \right ] + E_{x \sim P_{G} } \left [\ log\ (1-D(x)) \ \right ] $$
 
-这条公式就是来衡量 $P_G(x)$ 和 $P_{data}(x)$ 之间的不同程度。对于GAN，我们的做法就是：给定 G ，找到一个 $D^*$ 使得 $V(G,D)$ 最大，即 $\underset{D}{max}\ V(G,D)$ ,直觉上很好理解：在生成器固定的时候，就是通过判别器尽可能地将生成图片和真实图片区别开来，也就是要最大化两者之间的交叉熵。
+这条公式就是来衡量 $P_G(x)$ 和 $P_{data}(x)$ 之间的不同程度。对于GAN，我们的做法就是：给定 G ，找到一个 $D^{*}$ 使得 $V(G,D)$ 最大，即 $\underset{D}{max}\ V(G,D)$ ,直觉上很好理解：在生成器固定的时候，就是通过判别器尽可能地将生成图片和真实图片区别开来，也就是要最大化两者之间的交叉熵。
 
-$$D^* = arg\ \underset{D}{max}\ V(G,D)$$
+$$D^{*} = arg\ \underset{D}{max}\ V(G,D)$$
 
-然后，要是固定 D ，使得 $\underset{D}{max}\ V(G,D)$ 最小的这个 G 代表的就是最好的生成器。所以 G 终极目标就是找到 $G^*$， 找到了 $G^*$ 我们就找到了分布 $P_G(x)$ 对应参数的 $θ_{G}$ ：
+然后，要是固定 D ，使得 $\underset{D}{max}\ V(G,D)$ 最小的这个 G 代表的就是最好的生成器。所以 G 终极目标就是找到 $G^{*}$， 找到了 $G^{*}$ 我们就找到了分布 $P_G(x)$ 对应参数的 $θ_{G}$ ：
 
-$$G^* = arg\ \underset{G}{min}\ \underset{D}{max}\ V(G,D)$$
+$$G^{*} = arg\ \underset{G}{min}\ \underset{D}{max}\ V(G,D)$$
 
 上边的步骤已经给出了常用的组件和一个我们期望的优化目标，现在我们按照步骤来对目标进行推导：
 
-#### 寻找最好的 $D^*$
+#### 寻找最好的 $D^{*}$
 
-首先是第一步，给定 G ，找到一个 $D^*$ 使得 $V(G,D)$ 最大，即求 $\underset{D}{max}\ V(G,D)$ ：
+首先是第一步，给定 G ，找到一个 $D^{*}$ 使得 $V(G,D)$ 最大，即求 $\underset{D}{max}\ V(G,D)$ ：
 
 $$
 \begin{align}
@@ -186,22 +186,22 @@ $$f(D) = P_{data}(x) log D + P_G(x)log(1-D)$$
 
 其中 $D = D(x)$ ，而 $P_{data}(x)$ 是给定的，因为真实分布是客观存在的，而因为 G 也是给定的，所以 $P_G(x)$ 也是固定的。
 
-那么，对 $f(D)$ 求导，然后令 $f^{'}(D) = 0$，发现：
+那么，对 $f(D)$ 求导，然后令 ${f}'(D) = 0$，发现：
 
-$$D^* = \frac{P_{data}(x)}{P_{data}(x)+P_G(x)}$$
+$$D^{*} = \frac{P_{data}(x)}{P_{data}(x)+P_G(x)}$$
 
 于是我们就找出了在给定的 G 的条件下，最好的 D 要满足的条件。
 
-下图表示了，给定三个不同的 G1，G3，G3 分别求得的令 $V(G,D)$ 最大的那个 $D^*$，横轴代表了$P_{data}$，蓝色曲线代表了可能的 $P_G$：
+下图表示了，给定三个不同的 G1，G3，G3 分别求得的令 $V(G,D)$ 最大的那个 $D^{*}$，横轴代表了$P_{data}$，蓝色曲线代表了可能的 $P_G$：
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/7.png)
 
-此时，我们求 $\underset{D}{max}\ V(G,D)$ 就非常简单了，直接把前边的 $D^*$ 代进去：
+此时，我们求 $\underset{D}{max}\ V(G,D)$ 就非常简单了，直接把前边的 $D^{*}$ 代进去：
 
 $$
 \begin{align}
-\underset{D}{max}\ V(G,D) &= V(G,D^*)\\
-& = E_{x \sim P_{data} } \left [\ log\ D^*(x) \ \right ] + E_{x \sim P_{G} } \left [\ log\ (1-D^*(x)) \ \right ] \\
+\underset{D}{max}\ V(G,D) &= V(G,D^{*})\\
+& = E_{x \sim P_{data} } \left [\ log\ D^{*}(x) \ \right ] + E_{x \sim P_{G} } \left [\ log\ (1-D^{*}(x)) \ \right ] \\
 & = E_{x \sim P_{data} } \left [\ log\ \frac{P_{data}(x)}{P_{data}(x)+P_G(x)} \ \right ] + E_{x \sim P_{G} } \left [\ log\ \frac{P_{G}(x)}{P_{data}(x)+P_G(x)} \ \right ]\\
 & = \int_{x} P_{data}(x) log \frac{P_{data}(x)}{P_{data}(x)+P_G(x)} dx+ \int_{x} P_G(x)log(\frac{P_{G}(x)}{P_{data}(x)+P_G(x)})dx \\
 & = \int_{x} P_{data}(x) log \frac{\frac{1}{2}P_{data}(x)}{\frac{P_{data}(x)+P_G(x)}{2} } dx+ \int_{x} P_{G}(x) log \frac{\frac{1}{2}P_{G}(x)}{\frac{P_{data}(x)+P_G(x)}{2} } dx \\
@@ -217,15 +217,15 @@ $$
 
 补充一点， $JSD ( P_{data}(x) || P_G(x))$ 的取值范围是从 $0$ 到 $log 2$，那么，$\underset{D}{max}\ V(G,D)$ 的范围是从 $0$ 到 $-2log 2$ 。
 
-#### 寻找最好的 $G^*$
+#### 寻找最好的 $G^{*}$
 
-这是第二步，给定 D ，找到一个 $G^*$ 使得 $\underset{D}{max}\ V(G,D)$ 最小，即求 $\underset{G}{min}\ \underset{D}{max}\ V(G,D)$ :
+这是第二步，给定 D ，找到一个 $G^{*}$ 使得 $\underset{D}{max}\ V(G,D)$ 最小，即求 $\underset{G}{min}\ \underset{D}{max}\ V(G,D)$ :
 
-根据求得的 $D^*$ 我们有：
+根据求得的 $D^{*}$ 我们有：
 
 $$
 \begin{align}
-G^* & =arg\ \underset{G}{min}\ \underset{D}{max}\ V(G,D) \\
+G^{*} & =arg\ \underset{G}{min}\ \underset{D}{max}\ V(G,D) \\
 & =arg\ \underset{G}{min}\  \underset{D}{max}\ -2 log 2 + 2 JSD \left ( P_{data}(x) || P_G(x) \right)
 \end{align}
 $$
