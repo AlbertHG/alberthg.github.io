@@ -5,7 +5,7 @@
 ## 使用
 
 * 开始
-	* [开始](#开始)
+    * [开始](#开始)
 	* [撰写博文](#撰写博文)
 * 组件
 	* [侧边栏](#侧边栏)
@@ -30,10 +30,10 @@
 ```
 # Site settings
 title: ATuk Blog                   # 你的博客网站标题
-SEOTitle: ATuk's Blog		# SEO 标题
+SEOTitle: ATuk's Blog        # SEO 标题
 description: "Hello World"	   	   # 随便说点，描述一下
 
-# SNS settings      
+# SNS settings
 github_username: AlbertHG     # 你的github账号
 
 # Build settings
@@ -56,7 +56,7 @@ subtitle:   This is subtitle
 date:       2018-04-11
 author:     ATuk
 header-img: img/HelloBlog.jpg
-catalog: 	 true
+catalog:      true
 tags:
     - Blog
     - Page
