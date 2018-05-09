@@ -3,7 +3,7 @@ layout:     post
 title:      《机器学习要领》 绪论（中文翻译版）
 subtitle:   Machine Learning Yearning Chapter1 Introduction(Chinese ver)
 date:       2018-04-22
-author:     ATuk
+author:     Canary
 header-img: img/ML_yearning1.jpg
 catalog: true
 tags:

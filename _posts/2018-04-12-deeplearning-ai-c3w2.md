@@ -3,7 +3,7 @@ layout:     post
 title:      机器学习策略(2)
 subtitle:    "\"deeplearning.ai-Class3-Week2\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c3_w1.jpg
 catalog: true
 tags:

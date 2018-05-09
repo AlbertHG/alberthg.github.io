@@ -3,7 +3,7 @@ layout:     post
 title:      卷积神经网络
 subtitle:    "\"deeplearning.ai-Class4-Week1\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c4_w1.jpg
 catalog: true
 tags:

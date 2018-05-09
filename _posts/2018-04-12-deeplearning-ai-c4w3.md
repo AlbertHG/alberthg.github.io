@@ -3,7 +3,7 @@ layout:     post
 title:      目标检测
 subtitle:    "\"deeplearning.ai-Class4-Week3\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c4_w3.jpg
 catalog: true
 tags:

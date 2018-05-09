@@ -3,7 +3,7 @@ layout:     post
 title:      深度卷积网络：实例探究
 subtitle:    "\"deeplearning.ai-Class4-Week2\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c4_w2.jpg
 catalog: true
 tags:

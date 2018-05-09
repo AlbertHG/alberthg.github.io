@@ -3,7 +3,7 @@ layout:     post
 title:      《机器学习要领》 配置开发集和训练集（中文翻译版）
 subtitle:   Machine Learning Yearning Chapter2 Setting up development and test sets(Chinese ver)
 date:       2018-04-23
-author:     ATuk
+author:     Canary
 header-img: img/ML_yearning1.jpg
 catalog: true
 tags:

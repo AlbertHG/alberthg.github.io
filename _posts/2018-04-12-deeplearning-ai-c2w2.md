@@ -3,7 +3,7 @@ layout:     post
 title:      优化算法
 subtitle:    "\"deeplearning.ai-Class2-Week2\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c2_w2.jpg
 catalog: true
 tags:

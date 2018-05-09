@@ -3,7 +3,7 @@ layout:     post
 title:      神经网络的基础
 subtitle:    "\"deeplearning.ai-Class1-Week2\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c1_w2.jpg
 catalog: true
 tags:

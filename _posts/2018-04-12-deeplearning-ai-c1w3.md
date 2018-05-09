@@ -3,7 +3,7 @@ layout:     post
 title:      浅层神经网络
 subtitle:    "\"deeplearning.ai-Class1-Week3\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c1_w3.jpg
 catalog: true
 tags:

@@ -3,7 +3,7 @@ layout:     post
 title:      循环神经网络
 subtitle:    "\"deeplearning.ai-Class5-Week1\""
 date:       2018-04-21
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c5_w1.jpg
 catalog: true
 tags:

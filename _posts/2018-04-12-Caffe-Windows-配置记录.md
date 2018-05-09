@@ -3,7 +3,7 @@ layout:     post
 title:      Caffe Windows 配置
 subtitle:    "\"Caffe for Windows10\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/caffe.jpg
 catalog: true
 tags:

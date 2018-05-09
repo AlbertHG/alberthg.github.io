@@ -3,7 +3,7 @@ layout:     post
 title:      特殊应用：人脸识别和神经风格转换
 subtitle:    "\"deeplearning.ai-Class4-Week4\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c4_w4.jpg
 catalog: true
 tags:

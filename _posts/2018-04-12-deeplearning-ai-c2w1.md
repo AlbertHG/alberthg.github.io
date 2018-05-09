@@ -3,7 +3,7 @@ layout:     post
 title:      深度学习的实用层面
 subtitle:    "\"deeplearning.ai-Class2-Week1\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c2_w1.jpg
 catalog: true
 tags:

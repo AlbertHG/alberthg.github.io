@@ -3,7 +3,7 @@ layout:     post
 title:      《机器学习要领》 偏差和方差（中文翻译版）
 subtitle:   Machine Learning Yearning Chapter4 Bias and Variance(Chinese ver)
 date:       2018-05-02
-author:     ATuk
+author:     Canary
 header-img: img/ML_yearning1.jpg
 catalog: true
 tags:

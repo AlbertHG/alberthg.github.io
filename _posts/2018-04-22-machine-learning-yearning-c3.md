@@ -3,7 +3,7 @@ layout:     post
 title:      《机器学习要领》 基本误差分析（中文翻译版）
 subtitle:   Machine Learning Yearning Chapter3 Basic Error Analysis(Chinese ver)
 date:       2018-04-26
-author:     ATuk
+author:     Canary
 header-img: img/ML_yearning1.jpg
 catalog: true
 tags:

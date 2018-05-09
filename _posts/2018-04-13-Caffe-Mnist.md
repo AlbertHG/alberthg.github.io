@@ -3,7 +3,7 @@ layout:     post
 title:      Caffe Mnist 实例
 subtitle:    "\"【Caffe-windows】 Minst实例过程记录\""
 date:       2018-04-13
-author:     ATuk
+author:     Canary
 header-img: img/caffe_mnist.jpg
 catalog: true
 tags:

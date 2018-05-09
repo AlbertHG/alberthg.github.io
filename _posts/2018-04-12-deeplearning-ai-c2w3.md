@@ -3,7 +3,7 @@ layout:     post
 title:      超参数调试、Batch 正则化和程序框架
 subtitle:    "\"deeplearning.ai-Class2-Week3\""
 date:       2018-04-12
-author:     ATuk
+author:     Canary
 header-img: img/deeplearning_c2_w3.jpg
 catalog: true
 tags:

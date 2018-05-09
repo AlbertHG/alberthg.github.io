@@ -3,7 +3,7 @@ layout:     post
 title:      生成对抗网络——原理解释和数学推导
 subtitle:   生成对抗网络系列文章（1）
 date:       2018-05-05
-author:     ATuk
+author:     Canary
 header-img: img/gan1.jpg
 catalog: true
 tags:
