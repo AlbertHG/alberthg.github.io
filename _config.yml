@@ -1,10 +1,10 @@
 # Site settings
-title: ATuk Blog
-SEOTitle: 黄钢的博客|ATuk Blog
+title: Canary Blog
+SEOTitle: 黄钢的部落格|Canary Blog
 header-img: img/pagehome1.jpg
 email: hhhgggpps@gmail.com
 description: "Hello World"
-keyword: "ATuk Home"
+keyword: "Canary Home"
 url: "https://alberthg.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/AlbertHG/alberthg.github.io.git" # you code repository
