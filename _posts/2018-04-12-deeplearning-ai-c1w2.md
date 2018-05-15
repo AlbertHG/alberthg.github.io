@@ -18,6 +18,8 @@ tags:
 
 > 欢迎Star
 
+*本篇博客有大量公式演示，不推荐使用手机查看*
+
 ## Logistic 回归(Logistic Regression)
 
 Logistic 回归是一个用于二分分类的算法。

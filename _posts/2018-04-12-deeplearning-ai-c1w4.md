@@ -18,6 +18,8 @@ tags:
 
 > 欢迎Star
 
+*本篇博客有大量公式演示，不推荐使用手机查看*
+
 ## 深层神经网络的前向传播和反向传播(Forward and backward propagation)
 
 #### 前向传播

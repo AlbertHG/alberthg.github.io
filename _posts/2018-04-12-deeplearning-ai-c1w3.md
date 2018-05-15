@@ -18,6 +18,8 @@ tags:
 
 > 欢迎Star
 
+*本篇博客有大量公式演示，不推荐使用手机查看*
+
 ## 神经网络表示(Neural Network Representation)
 
 竖向堆叠起来的输入特征被称作神经网络的 **输入层(the input layer)**。

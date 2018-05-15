@@ -18,6 +18,7 @@ tags:
 
 > 欢迎Star
 
+*本篇博客有大量公式演示，不推荐使用手机查看*
 
 ## 为什么选择序列模型？(Why Sequence Models?)
 

@@ -18,6 +18,8 @@ tags:
 
 > 欢迎Star
 
+*本篇博客有大量公式演示，不推荐使用手机查看*
+
 ## 什么是人脸识别？(What is face recognition?)
 
 人脸识别的相关文献中，常见到两个概念：人脸验证(face verification)和人脸识别(face recognition)。
