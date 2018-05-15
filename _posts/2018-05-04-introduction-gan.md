@@ -306,13 +306,63 @@ $$L = - \left (\frac{1}{m}\sum_{i=1}^{m} log D(x^i) + \frac{1}{m}\sum_{i=1}^{m} 
     - 训练生成器（G）的过程，循环 $1$ 次：
         - 从先验分布 $P_{prior}(x)$ 中抽样 $m$个噪声向量 $\lbrace z^{(1)},z^{(2)},z^{(3)},...,z^{(m)} \rbrace$
         - 最小化 $\tilde V$ 更新生成器参数 $θ_G$：
-            - $\tilde V = \frac{1}{m}\sum_{i=1}^{m} log (1-D(G(z^i))$
+            - $\require{cancel}\tilde{V}=\cancel{\frac{1}{m}\sum_{i=1}^m\log D(x^i)}+\frac{1}{m}\sum_{i=1}^m\log(1-D(G(z^i)))$
             - $θ_G := θ_G - \eta \nabla \tilde V(θ_G)$
 
-#### 关于最小化 V 以训练 G 的一点经验操作
+## 关于最小化 V 以训练 G 的一点经验操作
 
 在训练生成器的过程中，我们实际上并不是去最小化 $V = E_{x \sim P_{G} } \left [\ log\ (1-D(x)) \ \right ]$ ，而是反过来最大化 $$V = E_{x \sim P_{G} } \left [\ -log\ (D(x)) \ \right ]$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/8.png)
 
 是因为如果使用 $log\ (1-D(x))$ 也就是红线那一条曲线的话，我们在刚开始迭代的时候，由于生成器的分布和真实分布差别很大，也就是在横轴的左边，会导致训练的速度很慢。而换用 $-log\ (D(x))$ 也就是蓝线部分的话，刚开始训练的速度就会很快，然后慢慢变慢，这种趋势比较符合我们的直觉认知。
+
+## GAN训练的几个问题
+
+#### 训练不稳定
+
+训练原始GAN是一件非常困难的事情。难主要体现在训练过程中可能并不收敛、训练出的生成器根本不能产生有意义的内容等方面。另一方面，虽然说我们优化的目标函数是JSD，它应该能体现出两个分布的距离。并且这个距离最好一开始比较大，后来随着训练 G 过程的深入，这个距离应该慢慢变小才比较好。但实际上这只是我们理想中的情况。
+
+在实际应用中我们会发现， D 的 Loss Function 非常容易变成 0 ，而且在后面的训练中也已知保持着 0，很难发生改变。这个现象是为什么呢？其实这个道理很简单。虽然说 JSD 能够衡量两个分布之间的距离，但实际上有两种情况可能会导致 JSD 永远判定两个分布距离“无穷大”（ 
+$\mathbf{JSD}(P_{data}(x)||P_G(x))=\log2$ 
+）。从而使得 Loss Function 永远是 0：
+
+$$\max_DV(G, D)=-2\log2+2\underbrace{\mathbf{JSD}(P_{data}(x)||P_G(x))} {\log2}= 0$$
+
+第一种情况，就是判别器 D 太“强”了导致产生了过拟合。例如下图：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/10.png)
+
+上图蓝色和橙色分别是两个分布，我们能发现分布之间确实有一些重叠，所以按理来说 JSD 不应该是 log2 。但由于我们是采样一部分样本进行训练，所以当判别器足够“强”的时候，就很有可能找到一条分界线强行将两类样本分开，从而让两类样本之间被认为完全不存在重叠。我们可以尝试传统的正则化方法（regularization等），也可以减少模型的参数让它变得弱一些。但是我们训练的目的就是要找到一个“很强”的判别器，我们在实际操作中是很难界定到底要将判别器调整到什么水平才能满足我们的需要：既不会太强，也不会太弱。还有一点就是我们之前曾经认为这个判别器应该能够测量 JSD，但它能测量 JSD 的前提就是它必须非常强，能够拟合任何数据。这就跟我们“不想让它太强”的想法有矛盾了，所以实际操作中用 regularization 等方法很难做到好的效果。
+
+第二种情况，就是数据本身的特性。一般来说，生成器产生的数据都是一个映射到高维空间的低维流型。而低维流型之间本身就“不是那么容易”产生重叠的。如下图所示：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/11.png)
+
+也就是说，想要让两个概率分布“碰”到一起的概率并不是很高，他们之间的 “Divergence” 永远是 log2。这会导致整个训练过程中，JSD 作为距离评判标准无法为训练提供指导。
+
+解决方法有两种，一种是给数据加噪声，让生成器和真实数据分布“更容易”重叠在一起：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/12.png)
+
+但是这个方法缺点在于，我们的目标是训练准确的数据（例如高清图片等）。加入噪声势必会影响我们生成数据的质量。一个简单的做法是让噪声的幅度随着时间缩小。不过操作起来也是比较困难的。
+
+除此之外还有另一种方法。既然 JSD 效果不好，那我们可以换一个Loss Function，使得哪怕两个分布一直毫无重叠，但是都能提供一个不同的连续的的“距离的度量” —— WGAN。
+
+#### Mode Collapse
+
+训练中可能遇到的另一个问题：所有的输出都一样！这个现象被称为 Mode Collapse。这个现象产生的原因可能是由于真实数据在空间中很多地方都有一个较大的概率值，但是我们的生成模型没有直接学习到真实分布的特性。为了保证最小化损失，它会宁可永远输出一样但是肯定正确的输出，也不愿意尝试其他不同但可能错误的输出。也就是说，我们的生成器有时可能无法兼顾数据分布的所有内部模式，只会保守地挑选出一个肯定正确的模式。
+
+假设我们要学习的真实分布是这个样子：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/13.png)
+
+而我们所设想的学习过程应该是这个样子：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/14.png)
+
+但实际上却是事与愿违：
+
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/15.png)
+
+模型在学习到一个真实分布的模式之后，并不会继续学习其他模式，而是尝试立刻将这个模式忘掉，转而去学习其他模式。并且在迭代过程中不断在各个模式中跳跃。但是关于这个情况产生的原因，并没有太好的定论。
