@@ -9,6 +9,7 @@ catalog: true
 tags:
     - GAN
     - 机器学习
+    - 笔记
 ---
 
 ## 前言
