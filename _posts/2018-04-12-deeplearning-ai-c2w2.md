@@ -300,17 +300,17 @@ $β_1$、$β_2$、$ϵ$ 通常不需要调试。
 
 最常用的学习率衰减方法：
 
-$$\alpha = \frac{1}{1 + decay_rate * epoch_num} * \alpha_0$$
+$$\alpha = \frac{1}{1 + decay_{rate} * epoch_{num} } * \alpha_0$$
 
 其中，`decay_rate`为衰减率（超参数），`epoch_num`为将所有的训练样本完整过一遍的次数。
 
 * 指数衰减：
 
-$$\alpha = 0.95^{ epoch_num } * \alpha\_0$$
+$$\alpha = 0.95^{ epoch_{num} } * \alpha\_0$$
 
 * 其他：
 
-$$\alpha = \frac{k}{\sqrt{epoch_num}} * \alpha_0$$
+$$\alpha = \frac{k}{\sqrt{epoch_{num} } } * \alpha_0$$
 
 * 离散下降:
 
