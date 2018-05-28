@@ -167,6 +167,7 @@ $$v := \beta v + (1 - \beta)\theta_t$$
 原因是：
 
 $$v_0 = 0$$
+
 $$v_1 = 0.98v_0 + 0.02\theta_1$$
 
 如果第一天的值为如 40 ，则 $v_{1}=0.02\times40=8$ ，得到的值要远小于实际值,因此，$v_1$ 仅为第一个数据的 0.02（或者说 $1-β$），后面几天的情况也会由于初值引起的影响，均低于实际均值。
@@ -194,9 +195,13 @@ $$\frac{v\_t}{1-\beta^t} = \beta v_{t-1} + (1 - \beta)\theta_t$$
 **具体算法如下**：
 
 for l = 1, .. , L：
+
 $$v_{dW^{[l]}} = \beta v_{dW^{[l]}} + (1 - \beta) dW^{[l]}$$
+
 $$v_{db^{[l]}} = \beta v_{db^{[l]}} + (1 - \beta) db^{[l]}$$
+
 $$W^{[l]} := W^{[l]} - \alpha v_{dW^{[l]}}$$
+
 $$b^{[l]} := b^{[l]} - \alpha v_{db^{[l]}}$$
 
 其中，将动量衰减参数 $β$ 设置为 0.9 是超参数的一个常见且效果不错的选择。当 $β$ 被设置为 0 时，显然就成了 batch 梯度下降法。
@@ -214,8 +219,11 @@ $dw$，$db$ 想象成球的加速度；而 $v\_{dw}$、$v\_{db}$ 相当于速度
 **RMSProp（Root Mean Square Prop，均方根）** 算法是在对梯度进行指数加权平均的基础上，引入平方和平方根。每次迭代训练过程中，其权重W和常数项b的更新表达式为，具体过程为（省略了 $l$）：
 
 $$s_{dw} = \beta s_{dw} + (1 - \beta)(dw)^2$$
+
 $$s_{db} = \beta s_{db} + (1 - \beta)(db)^2$$
+
 $$w := w - \alpha \frac{dw}{\sqrt{s_{dw} + \epsilon}}$$
+
 $$b := b - \alpha \frac{db}{\sqrt{s_{db} + \epsilon}}$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week2/md_images/07.jpg)
@@ -225,6 +233,7 @@ $$b := b - \alpha \frac{db}{\sqrt{s_{db} + \epsilon}}$$
 还有一点需要注意的是为了避免RMSprop算法中分母为零，通常可以在分母增加一个极小的常数 $\varepsilon$ ：
 
 $$\frac{dw}{\sqrt{s_{dw} + \epsilon}}$$
+
 $$\frac{db}{\sqrt{s_{db} + \epsilon}}$$
 
 其中， $\varepsilon=10^{-8}$ ，或者其它较小值。
@@ -242,15 +251,21 @@ $$V_{dW} = 0, V_{dW} = 0, S_{db} = 0, S_{db} = 0$$
 - 用每一个 mini-batch 计算 $dW$、$db$，第 $t$ 次迭代时：
 
 $$V_{dW} = \beta_1 V_{dW} + (1 - \beta_1) dW$$
+
 $$V_{db} = \beta_1 V_{db} + (1 - \beta_1) db$$
+
 $$S_{dW} = \beta_2 S_{dW} + (1 - \beta_2) {(dW)}^2$$
+
 $$S_{db} = \beta_2 S_{db} + (1 - \beta_2) {(db)}^2$$
 
 - 一般使用 Adam 算法时需要计算偏差修正：
 
 $$V^{corrected}_{dW} = \frac{V_{dW}}{1-{\beta_1}^t}$$
+
 $$V^{corrected}_{db} = \frac{V_{db}}{1-{\beta_1}^t}$$
+
 $$S^{corrected}_{dW} = \frac{S_{dW}}{1-{\beta_2}^t}$$
+
 $$S^{corrected}_{db} = \frac{S_{db}}{1-{\beta_2}^t}$$
 
 - 所以，更新 $W$、$b$ 时有：
