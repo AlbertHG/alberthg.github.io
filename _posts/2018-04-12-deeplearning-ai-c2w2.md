@@ -160,7 +160,7 @@ $$v := \beta v + (1 - \beta)\theta_t$$
 
 ## 指数加权平均的偏差修正(Bias correction in exponentially weighted averages)
 
-在我们执行指数加权平均的公式时，当 ￥\beta=0.98￥ 时，我们得到的并不是图中的绿色曲线，而是下图中的紫色曲线，其起点比较低。
+在我们执行指数加权平均的公式时，当 $\beta=0.98$ 时，我们得到的并不是图中的绿色曲线，而是下图中的紫色曲线，其起点比较低。
 
 ![](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/02-Improving%20Deep%20Neural%20Networks%20Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization/week2/md_images/05.jpg)
 
