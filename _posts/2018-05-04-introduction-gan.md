@@ -312,7 +312,7 @@ $$L = - \left (\frac{1}{m}\sum_{i=1}^{m} log D(x^i) + \frac{1}{m}\sum_{i=1}^{m} 
 
 ## 关于最小化 V 以训练 G 的一点经验操作
 
-在训练生成器的过程中，我们实际上并不是去最小化 $V = E_{x \sim P_{G} } \left [\ log\ (1-D(x)) \ \right ]$ ，而是反过来最大化 $$V = E_{x \sim P_{G} } \left [\ -log\ (D(x)) \ \right ]$$
+在训练生成器的过程中，我们实际上并不是去最小化 $V = E_{x \sim P_{G} } \left [\ log\ (1-D(x)) \ \right ]$ ，而是最小化 $$V = E_{x \sim P_{G} } \left [\ -log\ (D(x)) \ \right ]$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180505introduction-gan/8.png)
 
