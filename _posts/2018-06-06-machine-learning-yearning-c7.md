@@ -214,5 +214,3 @@ $$\underset{\theta }{min} \ \ \sum_{(x,y)\in MobileImg}\left ( h_{\theta } (x)-y
 
 
 ------
-
-🚧🚧未完待续🚧🚧
