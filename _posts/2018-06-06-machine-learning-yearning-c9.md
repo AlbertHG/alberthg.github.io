@@ -16,6 +16,7 @@ tags:
 ## 前言
 
 > 本篇博客是 Andrew NG 《Machine Learning Yearning》 的“第九章：端到端的深度学习”翻译。Andrew NG 提到他曾经负责开发过一个大型端到端语音识别系统，并取得的很好的效果，但是他同时表示盲目使用该技术并不是好事。本章内容将探讨什么是端到端的深度学习？ 什么时候应该使用它，什么时候应该避免它？。开启本章内容，出发！
+
 👉[官网传送门](http://www.mlyearning.org/)<br>
 👉[GitHub项目传送门](https://github.com/AlbertHG/Machine-Learning-Yearning-Chinese-ver)，欢迎Star
 
