@@ -39,11 +39,11 @@ tags:
 
 我们将两个组件组成的“管道”可视化如下：
 
-![20](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/20.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/20.png)
 
 近期出现了用单一学习算法替代管道系统的趋势。这项任务的端到端学习算法尝试在仅输入原始文本“This is a great mop!”的情况下直接识别情绪的可能性：
 
-![21](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/21.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/21.png)
 
 神经网络通常用于端到端学习系统。术语“端到端(End-to-end)”指的是我们要求学习算法直接从输入到所需的输出。即。，学习算法直接将系统的“输入端”连接到“输出端”。即，学习算法将系统的“输入端”直接连接到“输出端”。
 
@@ -53,7 +53,7 @@ tags:
 
 假设你想建立一个语音识别系统。那么你可以构建一个包含三个组件的系统：
 
-![22](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/22.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/22.png)
 
 这些组件的职能如下：
 
@@ -63,11 +63,11 @@ tags:
 
 相反，端到端的系统可能会输入一个音频剪辑，并尝试直接输出文本:
 
-![23](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/23.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/23.png)
 
 到目前为止，我们只描述了完全线性的机器学习“管道”——输出顺序从一个阶段传递到下一个阶段。然而，管道可能更复杂，例如，这里有一个自动驾驶汽车的简单架构：
 
-![24](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/24.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/24.png)
 
 它有三个组成部分：一个负责使用相机图像检测其他车辆; 一个负责检测行人; 最终的组件则为我们的汽车出规划一条避开汽车和行人的道路来。
 
@@ -75,7 +75,7 @@ tags:
 
 相反，端到端的方法可能尝试接受传感器输入并直接输出转向方向。
 
-![25](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/25.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/25.png)
 
 尽管端到端学习已经取得了许多成功，但它并不总是最好的方法。例如，我们认为端到端的语音识别效果很好，但对自主驾驶的端到端学习则持怀疑态度。接下来的几章我会解释原因。
 
@@ -83,7 +83,7 @@ tags:
 
 考虑与我们之前的例子相同的语音系统管道：
 
-![22](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/22.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/22.png)
 
 这条管道的许多部分都是“手工设计的”:
 
@@ -99,7 +99,7 @@ tags:
 
 现在，考虑端到端系统：
 
-![23](https://raw.githubusercontent.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai/master/03-Structuring%20Machine%20Learning%20Projects/md_images/23.png)
+![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20180422mlyearning/23.png)
 
 该系统缺乏手工设计的知识。因此，当训练集很小时，它可能比手工设计的管道更糟糕。
 
