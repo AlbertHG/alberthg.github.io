@@ -40,7 +40,7 @@ tags:
     NVTOOLSEXT_PATH=C:\Program Files\NVIDIA Corporation\NvToolsExt\
     ```
 
-2. cuDNN 下载需要注册账号。就不提供地址了，认准版本号就可以。下载完之后，将压缩包解压到CUDA安装目录中，比如`C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0`；或者定义CUADD_ROOT缓存变量指向解压缩cuDNN文件的位置，比如`D:/caffe/cudnn-8.0-windows10-x64-v5.1/cuda`,使用这种方法，则需要修改`build\_win.cmd`文件，待会再说。
+2. cuDNN 下载需要注册账号。就不提供地址了，认准版本号就可以。下载完之后，将压缩包解压到CUDA安装目录中，比如`C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0`；或者定义CUADD_ROOT缓存变量指向解压缩cuDNN文件的位置。
 
 3. Python 3.5.3 我使用了Anaconda3，通过创建虚拟环境安装，因为本人电脑已经安装有Caffe，如果两个框架安装在同一环境中，生怕出事，于是新建环境。
 
