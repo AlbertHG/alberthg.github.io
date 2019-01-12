@@ -277,7 +277,7 @@ $$e_{receptionist}^{debiased} = e - e_{component}^{bias}$$
 
 $$\mu = \frac{e_{w1} + e_{w2}}{2}$$
 
-$$\mu_{B} = \frac {\mu · bias\\\_axis}{||bias\\\_axis||_2} + ||bias\\\_axis||_2 · bias\\\_axis$$
+$$\mu_{B} = \frac {\mu · bias\_axis}{||bias\_axis||_2} + ||bias\_axis||_2 · bias\_axis$$
 
 $$\mu_{\perp} = \mu - \mu_{B}$$
 
