@@ -26,11 +26,11 @@ tags:
 
 ## 白盒攻击理论
 
-我们想要做的事情就是，想要在真实图片 $x^0$ 上面加上一些特意设计的噪声 $\Delta x$ 得到 ${x}'$，使得模型网络能够完全得出不一样的识别结果。
+我们想要做的事情就是，想要在真实图片 $x^0$ 上面加上一些特意设计的噪声 $\Delta x$ 得到 ${x}' $，使得模型网络能够完全得出不一样的识别结果。
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20190327adversarialattack/1.jpg)
 
-现在的重点就是，如何找出这个特别的  ${x}'$$，我们现在先来看一下一般的训练网络的过程：
+现在的重点就是，如何找出这个特别的  ${x}'$，我们现在先来看一下一般的训练网络的过程：
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20190327adversarialattack/2.jpg)
 
