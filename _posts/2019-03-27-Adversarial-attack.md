@@ -68,7 +68,7 @@ $$d(x^{0},{x}') \leq \varepsilon$$
 
 ![](https://raw.githubusercontent.com/AlbertHG/alberthg.github.io/master/makedown_img/20190327adversarialattack/6.jpg)
 
-我们有两种常见的方式：L2-norm 和 L-infinity，我们用 $x^{'}$ 和 $x^{0}$ 的差值 $\Delta x$ 来表示两者之间的差异。
+我们有两种常见的方式：L2-norm 和 L-infinity，我们用 ${x}'$ 和 $x^{0}$ 的差值 $\Delta x$ 来表示两者之间的差异。
 
 第一种 L2-norm：
 

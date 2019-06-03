@@ -115,7 +115,7 @@ $$
 θ_{ML} & = \underset{θ}{arg\ max}\ \prod_{i=1}^{m}\ p_{model}(x^{(i)};θ) \\
 & = \underset{θ}{arg\ max}\ log \prod_{i=1}^{m}\ p_{model}(x^{(i)};θ) = \underset{θ}{arg\ max} \sum_{i=1}^{m}\ log\ p_{model}(x^{(i)};θ) \\
 & \approx  \underset{θ}{arg\ max}\ E_{x\sim \hat{p}_{data} }\ [log\  p_{model}(x;θ)] \\
-& = \underset{θ}{arg\ max}\ \left [ \int_x \hat{p}_{data}(x)\ log\ p_{model}(x;θ)dx - \int_x p_{data}(x)\ log\ \hat{p}_{data}(x)dx \right ] \\
+& = \underset{θ}{arg\ max}\ \left [ \int_x \hat{p}_{data}(x)\ log\ p_{model}(x;θ)dx - \int_x \hat{p}_{data}(x)\ log\ \hat{p}_{data}(x)dx \right ] \\
 & = \underset{θ}{arg\ max}\ \left [ \int_x \hat{p}_{data}(x)\  \left [ \ log\ p_{model}(x;θ) - log\ \hat{p}_{data}(x)\ \right ] dx \right ] \\
 & = \underset{θ}{arg\ max}\ \left [ -\int_x \hat{p}_{data}(x)\ log\ \frac{\hat{p}_{data} }{p_{model}(x;θ)}dx \right ] \\
 & = \underset{θ}{arg\ min}\ KL\ (\ \hat{p}_{data}(x) || p_{model}(x;θ)\ )
